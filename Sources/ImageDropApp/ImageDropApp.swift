@@ -13,7 +13,7 @@ struct ImageDropApp: App {
             ContentView(viewModel: viewModel)
                 .onAppear { appDelegate.receive = viewModel.process(urls:) }
         }
-        .defaultSize(width: 560, height: 520)
+        .defaultSize(width: 560, height: 460)
 
         Settings {
             SettingsView()

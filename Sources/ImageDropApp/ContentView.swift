@@ -21,7 +21,7 @@ struct ContentView: View {
                 Text("HEIC / HEIF / JPEG / PNG / 複数可")
                     .foregroundStyle(.secondary)
             }
-            .frame(maxWidth: .infinity, minHeight: 180)
+            .frame(maxWidth: .infinity, minHeight: 160)
             .background(isTargeted ? Color.accentColor.opacity(0.16) : Color.secondary.opacity(0.08), in: RoundedRectangle(cornerRadius: 18))
             .overlay(RoundedRectangle(cornerRadius: 18).stroke(isTargeted ? Color.accentColor : Color.secondary.opacity(0.28), style: StrokeStyle(lineWidth: 1.5, dash: [7])))
             .dropDestination(for: URL.self, action: { urls, _ in
@@ -39,7 +39,7 @@ struct ContentView: View {
             }
         }
         .padding(28)
-        .frame(minHeight: 520, maxHeight: 520)
+        .frame(minHeight: 460, maxHeight: 460)
     }
 
     @ViewBuilder private var status: some View {
