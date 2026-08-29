@@ -40,9 +40,29 @@
           </div>
         </div>
         <figure class="hero-art">
-          <div class="art-grid" aria-hidden="true"></div>
-          <div class="art-disc" aria-hidden="true"></div>
-          <img src="https://raw.githubusercontent.com/shoppie70/ImageDrop/main/assets/ImageDrop.png" alt="ImageDropのアプリアイコン" width="512" height="512">
+          <div class="conversion-window">
+            <div class="window-bar">
+              <span class="traffic-lights" aria-hidden="true"><i>•</i><i>•</i><i>•</i></span>
+              <span>ImageDrop</span>
+            </div>
+            <div class="conversion-content">
+              <div class="file-chip source-file">
+                <span>INPUT</span>
+                <strong>IMG_1234.HEIC</strong>
+              </div>
+              <div class="drop-target">
+                <svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
+                  <path d="M12 3v12m0 0 5-5m-5 5-5-5M5 19h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <strong>画像をここにドロップ</strong>
+                <span>HEIC / JPEG / PNG / 複数可</span>
+              </div>
+              <div class="file-chip result-file">
+                <span>OUTPUT</span>
+                <strong>IMG_1234_compressed.jpg</strong>
+              </div>
+            </div>
+          </div>
           <figcaption>DROP IN. JPEG OUT.</figcaption>
         </figure>
       </section>
@@ -59,18 +79,21 @@
         </div>
         <ol class="flow-list">
           <li>
-            <span>01</span>
-            <h3>DROP</h3>
+            <span class="step-number">01</span>
+            <p class="step-label">DROP</p>
+            <h3>画像を落とす</h3>
             <p>HEIC、JPEG、PNGをアプリ画面またはDockアイコンへドロップ。</p>
           </li>
           <li>
-            <span>02</span>
-            <h3>CONVERT</h3>
+            <span class="step-number">02</span>
+            <p class="step-label">CONVERT</p>
+            <h3>自動で変換</h3>
             <p>JPEG化、圧縮、リサイズを、今の設定で自動実行。</p>
           </li>
           <li>
-            <span>03</span>
-            <h3>DONE</h3>
+            <span class="step-number">03</span>
+            <p class="step-label">DONE</p>
+            <h3>保存して完了</h3>
             <p>元画像と同じフォルダに、すぐ使えるJPEGを保存。</p>
           </li>
         </ol>
