@@ -1,0 +1,114 @@
+:root {
+  color-scheme: light;
+  --ink: #122024;
+  --muted: #5d6866;
+  --paper: #f5f4ef;
+  --surface: #ffffff;
+  --line: #d9ddd5;
+  --accent: #d5ff42;
+  --accent-deep: #abc41f;
+  --shadow: 0 18px 52px rgb(22 35 29 / 10%);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+  line-height: 1.65;
+}
+
+a { color: inherit; }
+
+.site-header,
+main,
+footer {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 0;
+}
+
+.brand { display: inline-flex; align-items: center; gap: 9px; font-weight: 760; text-decoration: none; letter-spacing: -.03em; }
+.brand-mark { display: grid; place-items: center; width: 28px; height: 28px; border: 1.5px solid var(--ink); border-radius: 8px; font-size: 19px; line-height: 1; }
+.github-link { font-size: 14px; font-weight: 650; text-underline-offset: 4px; }
+
+.hero { padding: 108px 0 76px; max-width: 770px; }
+.eyebrow { margin: 0 0 16px; color: var(--muted); font-size: 11px; font-weight: 760; letter-spacing: .15em; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { margin-bottom: 20px; font-size: clamp(56px, 10vw, 118px); line-height: .96; letter-spacing: -.075em; }
+h2 { margin-bottom: 0; font-size: clamp(34px, 5vw, 60px); line-height: 1.1; letter-spacing: -.06em; }
+h3 { margin-bottom: 8px; font-size: 20px; letter-spacing: -.03em; }
+.hero-lede { margin-bottom: 16px; font-size: clamp(21px, 2.4vw, 30px); font-weight: 680; letter-spacing: -.04em; }
+.hero-copy { color: var(--muted); font-size: 16px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 34px; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 48px; padding: 12px 20px; border: 1px solid var(--ink); border-radius: 999px; font-size: 14px; font-weight: 720; text-decoration: none; transition: background-color .2s ease, color .2s ease, transform .2s ease; }
+.button:hover { transform: translateY(-2px); }
+.button:focus-visible, a:focus-visible { outline: 3px solid var(--accent-deep); outline-offset: 4px; }
+.button-primary { background: var(--ink); color: white; }
+.button-primary:hover { background: #30423d; }
+.button-secondary { border-color: var(--line); background: transparent; }
+.button-secondary:hover { background: var(--surface); }
+
+.drop-card { position: relative; display: grid; gap: 16px; padding: clamp(20px, 5vw, 48px); overflow: hidden; border: 1px solid var(--line); border-radius: 28px; background: var(--surface); box-shadow: var(--shadow); }
+.drop-card::after { position: absolute; inset: auto -80px -115px auto; width: 260px; height: 260px; border-radius: 50%; background: var(--accent); content: ""; opacity: .8; }
+.drop-file, .drop-result { position: relative; z-index: 1; margin: 0; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+.drop-result { text-align: right; color: var(--ink); }
+.drop-target { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; min-height: 220px; border: 1.5px dashed #aab3ac; border-radius: 18px; background: rgb(245 244 239 / 74%); text-align: center; }
+.drop-target strong { font-size: 20px; letter-spacing: -.04em; }
+.drop-target span:last-child { color: var(--muted); font-size: 14px; }
+.drop-arrow { display: grid; place-items: center; width: 50px; height: 50px; margin-bottom: 7px; border: 1.5px solid var(--ink); border-radius: 14px; font-size: 31px; line-height: 1; }
+
+.section { padding: 144px 0; }
+.section-heading { max-width: 570px; }
+.flow-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; padding: 0; margin: 64px 0 0; list-style: none; }
+.flow-list li { padding-top: 18px; border-top: 1px solid var(--ink); }
+.flow-number, .detail-label { display: block; margin-bottom: 32px; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+.flow-list p, .detail-grid p { margin: 0; color: var(--muted); font-size: 15px; }
+
+.details-section { border-top: 1px solid var(--line); }
+.detail-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 54px; margin-top: 68px; }
+.detail-grid article { padding: 27px 0 34px; border-top: 1px solid var(--line); }
+.detail-label { margin-bottom: 16px; font-size: 10px; letter-spacing: .08em; }
+
+.spec-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; overflow: hidden; border: 1px solid var(--ink); border-radius: 18px; background: var(--ink); }
+.spec-strip div { min-height: 126px; padding: 23px; background: var(--accent); }
+.spec-strip span, .spec-strip strong { display: block; }
+.spec-strip span { margin-bottom: 25px; font-size: 11px; font-weight: 750; letter-spacing: .08em; }
+.spec-strip strong { font-size: 14px; letter-spacing: -.03em; }
+
+.final-cta { padding: 156px 0; text-align: center; }
+.final-cta .eyebrow { margin-bottom: 20px; }
+.final-cta p:not(.eyebrow) { margin: 23px 0 34px; color: var(--muted); }
+
+footer { display: flex; justify-content: space-between; padding: 24px 0 34px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+footer a { text-underline-offset: 4px; }
+
+@media (max-width: 720px) {
+  .site-header, main, footer { width: min(100% - 32px, 1120px); }
+  .site-header { padding: 19px 0; }
+  .github-link { font-size: 12px; }
+  .hero { padding: 74px 0 54px; }
+  .section { padding: 90px 0; }
+  .flow-list, .detail-grid, .spec-strip { grid-template-columns: 1fr; }
+  .flow-list { gap: 32px; margin-top: 46px; }
+  .flow-number { margin-bottom: 18px; }
+  .detail-grid { margin-top: 48px; }
+  .spec-strip div { min-height: auto; padding: 19px; }
+  .spec-strip span { margin-bottom: 8px; }
+  .final-cta { padding: 100px 0; text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .button { transition: none; }
+}
