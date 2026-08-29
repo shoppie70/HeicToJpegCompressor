@@ -5,8 +5,8 @@
 </p>
 
 <p align="center">
-  <strong>画像をドロップするだけで、Web向けJPEGが完成。</strong><br>
-  軽量・プライバシー重視のネイティブmacOS画像変換アプリです。
+  <strong>画像を、落とすだけ。</strong><br>
+  JPEG変換、圧縮、リサイズだけを行うネイティブmacOSアプリです。
 </p>
 
 <p align="center">
@@ -18,6 +18,10 @@
 ImageDropは、HEIC・JPEG・PNGをWebで扱いやすいJPEGへ変換する、シンプルなmacOSアプリです。画像をアプリ画面またはDockアイコンへドロップすると、設定済みの品質・サイズで自動変換し、元ファイルと同じフォルダに保存します。
 
 元画像を変更・上書きすることはありません。
+
+> ただそれだけを行う、極めてシンプルなアプリです。機能が一つしか無いからこそ、便利です。
+
+製品紹介ページは、GitHub Pagesで公開できます。GitHubリポジトリの **Settings → Pages → Build and deployment** で **GitHub Actions** を選択すると、`main` へのpush時に自動で更新されます。
 
 ## 主な機能
 
