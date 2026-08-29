@@ -14,10 +14,11 @@
         A00000000000000000000008 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
         A00000000000000000000009 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
         A00000000000000000000010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+        A00000000000000000000013 /* SettingsControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsControls.swift; sourceTree = "<group>"; };
         A00000000000000000000011 /* ImageDropCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libImageDropCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
         A00000000000000000000012 /* ImageDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = ImageDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
         A00000000000000000000020 /* Core Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A00000000000000000000031, A00000000000000000000032, A00000000000000000000033, A00000000000000000000034, A00000000000000000000035, A00000000000000000000036); runOnlyForDeploymentPostprocessing = 0; };
-        A00000000000000000000021 /* App Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A00000000000000000000037, A00000000000000000000038, A00000000000000000000039); runOnlyForDeploymentPostprocessing = 0; };
+        A00000000000000000000021 /* App Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A00000000000000000000037, A00000000000000000000038, A00000000000000000000039, A00000000000000000000041); runOnlyForDeploymentPostprocessing = 0; };
         A00000000000000000000022 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (A00000000000000000000040); runOnlyForDeploymentPostprocessing = 0; };
         A00000000000000000000031 = {isa = PBXBuildFile; fileRef = A00000000000000000000001; };
         A00000000000000000000032 = {isa = PBXBuildFile; fileRef = A00000000000000000000002; };
@@ -29,9 +30,10 @@
         A00000000000000000000038 = {isa = PBXBuildFile; fileRef = A00000000000000000000008; };
         A00000000000000000000039 = {isa = PBXBuildFile; fileRef = A00000000000000000000009; };
         A00000000000000000000040 = {isa = PBXBuildFile; fileRef = A00000000000000000000011; };
+        A00000000000000000000041 = {isa = PBXBuildFile; fileRef = A00000000000000000000013; };
         A00000000000000000000050 = {isa = PBXGroup; children = (A00000000000000000000051, A00000000000000000000052, A00000000000000000000053); sourceTree = "<group>"; };
         A00000000000000000000051 = {isa = PBXGroup; path = Sources/ImageDropCore; sourceTree = SOURCE_ROOT; children = (A00000000000000000000001, A00000000000000000000002, A00000000000000000000003, A00000000000000000000004, A00000000000000000000005, A00000000000000000000006); };
-        A00000000000000000000052 = {isa = PBXGroup; path = Sources/ImageDropApp; sourceTree = SOURCE_ROOT; children = (A00000000000000000000007, A00000000000000000000008, A00000000000000000000009, A00000000000000000000010); };
+        A00000000000000000000052 = {isa = PBXGroup; path = Sources/ImageDropApp; sourceTree = SOURCE_ROOT; children = (A00000000000000000000007, A00000000000000000000008, A00000000000000000000009, A00000000000000000000013, A00000000000000000000010); };
         A00000000000000000000053 = {isa = PBXGroup; name = Products; children = (A00000000000000000000011, A00000000000000000000012); sourceTree = "<group>"; };
         A00000000000000000000060 = {isa = PBXNativeTarget; name = ImageDropCore; productName = ImageDropCore; productReference = A00000000000000000000011; productType = "com.apple.product-type.library.static"; buildConfigurationList = A00000000000000000000071; buildPhases = (A00000000000000000000020); };
         A00000000000000000000061 = {isa = PBXNativeTarget; name = ImageDrop; productName = ImageDrop; productReference = A00000000000000000000012; productType = "com.apple.product-type.application"; buildConfigurationList = A00000000000000000000072; buildPhases = (A00000000000000000000021, A00000000000000000000022); dependencies = (A00000000000000000000080); };

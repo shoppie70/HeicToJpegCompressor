@@ -10,8 +10,8 @@ public enum LongEdgeOption: Int, CaseIterable, Sendable {
 
     public var label: String {
         switch self {
-        case .original: "Original"
-        case .custom: "Custom"
+        case .original: "元のサイズ"
+        case .custom: "カスタム"
         default: "\(rawValue) px"
         }
     }

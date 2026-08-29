@@ -26,9 +26,12 @@ struct ContentView: View {
 
             status
             if !viewModel.results.isEmpty { ResultListView(results: viewModel.results) }
-            Text(settingsSummary)
-                .font(.footnote)
-                .foregroundStyle(.secondary)
+            Divider()
+            VStack(alignment: .leading, spacing: 10) {
+                Text("変換設定")
+                    .font(.headline)
+                SettingsControls()
+            }
         }
         .padding(28)
     }
@@ -37,21 +40,15 @@ struct ContentView: View {
         switch viewModel.state {
         case .idle: EmptyView()
         case let .converting(completed, total):
-            VStack(spacing: 4) { Text("Converting \(total) images…"); Text("\(completed) / \(total)").foregroundStyle(.secondary) }
+            VStack(spacing: 4) { Text("\(total)枚の画像を変換中…"); Text("\(completed) / \(total)").foregroundStyle(.secondary) }
         case let .finished(summary):
             VStack(spacing: 4) {
-                Text("\(summary.converted) images converted")
+                Text("\(summary.converted)枚の画像を変換しました")
                 Text("\(ByteCountFormatter.string(fromByteCount: summary.inputBytes, countStyle: .file)) → \(ByteCountFormatter.string(fromByteCount: summary.outputBytes, countStyle: .file))")
                     .foregroundStyle(.secondary)
-                if summary.failed + summary.skipped > 0 { Text("\(summary.failed) failed, \(summary.skipped) skipped").foregroundStyle(.orange) }
+                if summary.failed + summary.skipped > 0 { Text("失敗 \(summary.failed)件・スキップ \(summary.skipped)件").foregroundStyle(.orange) }
             }
         }
-    }
-
-    private var settingsSummary: String {
-        let settings = AppPreferences.snapshot
-        let edge = settings.maxLongEdge.map { "max \($0) px" } ?? "original size"
-        return "JPEG / \(edge) / quality \(settings.jpegQuality.formatted(.number.precision(.fractionLength(2)))) / \(settings.removeMetadata ? "metadata removed" : "metadata kept")"
     }
 }
 
@@ -63,11 +60,11 @@ struct ResultListView: View {
             ForEach(results.suffix(3)) { result in
                 HStack {
                     Text(result.sourceURL.lastPathComponent).lineLimit(1)
-                    Spacer()
-                    switch result.outcome {
-                    case .converted: Image(systemName: "checkmark.circle.fill").foregroundStyle(.green)
-                    case .skipped: Image(systemName: "minus.circle").foregroundStyle(.secondary)
-                    case .failed: Image(systemName: "exclamationmark.circle.fill").foregroundStyle(.red)
+                Spacer()
+                switch result.outcome {
+                    case .converted: Label("変換済み", systemImage: "checkmark.circle.fill").foregroundStyle(.green)
+                    case let .skipped(reason): Label("スキップ: \(reason)", systemImage: "minus.circle").foregroundStyle(.secondary)
+                    case let .failed(reason): Label("エラー: \(reason)", systemImage: "exclamationmark.circle.fill").foregroundStyle(.red)
                     }
                 }
                 .font(.caption)

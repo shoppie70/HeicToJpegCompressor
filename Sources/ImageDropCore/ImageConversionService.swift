@@ -18,14 +18,14 @@ public struct ImageConversionService {
 
     public func convert(url: URL, settings: ConversionSettings) -> ConversionResult {
         guard isSupported(url) else {
-            return ConversionResult(sourceURL: url, outcome: .skipped(reason: "Unsupported image format"))
+            return ConversionResult(sourceURL: url, outcome: .skipped(reason: "対応していない画像形式です"))
         }
 
         do {
             let inputBytes = try fileSize(at: url)
             guard let source = CGImageSourceCreateWithURL(url as CFURL, nil),
                   let sourceImage = CGImageSourceCreateImageAtIndex(source, 0, [kCGImageSourceShouldCacheImmediately: true] as CFDictionary) else {
-                return ConversionResult(sourceURL: url, outcome: .failed(reason: "Could not decode image"))
+                return ConversionResult(sourceURL: url, outcome: .failed(reason: "画像を読み込めませんでした"))
             }
 
             let sourceProperties = CGImageSourceCopyPropertiesAtIndex(source, 0, nil) as? [CFString: Any] ?? [:]
@@ -144,10 +144,10 @@ private enum ConversionFailure: LocalizedError {
 
     var errorDescription: String? {
         switch self {
-        case .contextCreationFailed: "Could not create image context"
-        case .renderFailed: "Could not render image"
-        case .destinationCreationFailed: "Could not create output file"
-        case .writeFailed: "Could not write JPEG"
+        case .contextCreationFailed: "画像処理の準備に失敗しました"
+        case .renderFailed: "画像の描画に失敗しました"
+        case .destinationCreationFailed: "出力ファイルを作成できませんでした"
+        case .writeFailed: "JPEGファイルを書き出せませんでした"
         }
     }
 }

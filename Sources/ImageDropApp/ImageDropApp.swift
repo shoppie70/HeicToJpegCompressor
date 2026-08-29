@@ -13,7 +13,7 @@ struct ImageDropApp: App {
             ContentView(viewModel: viewModel)
                 .onAppear { appDelegate.receive = viewModel.process(urls:) }
         }
-        .defaultSize(width: 560, height: 420)
+        .defaultSize(width: 560, height: 600)
 
         Settings {
             SettingsView()
@@ -136,8 +136,8 @@ enum NotificationService {
             let content = UNMutableNotificationContent()
             content.title = "ImageDrop"
             content.body = summary.failed == 0 && summary.skipped == 0
-                ? "\(summary.converted) images converted"
-                : "\(summary.converted) converted, \(summary.failed + summary.skipped) not converted"
+                ? "\(summary.converted)枚の画像を変換しました"
+                : "\(summary.converted)枚を変換、\(summary.failed + summary.skipped)件は変換されませんでした"
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
             center.add(request)
         }
