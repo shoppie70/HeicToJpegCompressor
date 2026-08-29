@@ -39,6 +39,7 @@ struct ContentView: View {
             }
         }
         .padding(28)
+        .frame(minHeight: 600, maxHeight: 600)
     }
 
     @ViewBuilder private var status: some View {
