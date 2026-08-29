@@ -8,6 +8,11 @@ struct ContentView: View {
 
     var body: some View {
         VStack(spacing: 20) {
+            Text("画像をドロップするだけで、Web向けJPEGを元画像と同じフォルダに保存します。")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
             VStack(spacing: 10) {
                 Image(systemName: "arrow.down.doc")
                     .font(.system(size: 44, weight: .light))

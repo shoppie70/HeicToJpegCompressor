@@ -7,6 +7,7 @@ struct SettingsControls: View {
     @AppStorage(AppPreferences.jpegQualityKey) private var jpegQuality = ConversionSettings.defaultJPEGQuality
     @AppStorage(AppPreferences.removeMetadataKey) private var removeMetadata = true
     @AppStorage(AppPreferences.autoRotateKey) private var autoRotate = true
+    @State private var showsAdvancedOptions = false
 
     var body: some View {
         Picker("最大長辺", selection: $maxLongEdge) {
@@ -27,7 +28,12 @@ struct SettingsControls: View {
                 .frame(width: 34, alignment: .trailing)
         }
 
-        Toggle("メタデータを削除", isOn: $removeMetadata)
-        Toggle("画像の向きを自動補正", isOn: $autoRotate)
+        DisclosureGroup("詳細オプション", isExpanded: $showsAdvancedOptions) {
+            VStack(alignment: .leading, spacing: 8) {
+                Toggle("メタデータを削除", isOn: $removeMetadata)
+                Toggle("画像の向きを自動補正", isOn: $autoRotate)
+            }
+            .padding(.top, 4)
+        }
     }
 }
