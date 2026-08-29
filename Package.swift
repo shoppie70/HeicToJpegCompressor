@@ -10,7 +10,7 @@ let package = Package(
     ],
     targets: [
         .target(name: "ImageDropCore"),
-        .executableTarget(name: "ImageDropApp", dependencies: ["ImageDropCore"], exclude: ["Info.plist"]),
+        .executableTarget(name: "ImageDropApp", dependencies: ["ImageDropCore"], exclude: ["Info.plist", "Assets.xcassets"]),
         .testTarget(name: "ImageDropCoreTests", dependencies: ["ImageDropCore"])
     ]
 )
