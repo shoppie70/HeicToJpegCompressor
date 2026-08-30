@@ -1,161 +1,89 @@
 # HEICをJPEGへ縮小圧縮するだけ.app
 
 <p align="center">
-  <img src="assets/ImageDrop.png" width="160" alt="HEICをJPEGへ縮小圧縮するだけ.app アイコン" style="border-radius: 22%; box-shadow: 0 12px 32px rgba(0,0,0,0.15);">
+  <a href="https://shoppie70.github.io/ImageDrop/downloads/ImageDrop-v1.0.0.dmg">
+    <img src="assets/ImageDrop.png" width="144" alt="HEICをJPEGへ縮小圧縮するだけ.app のアイコン">
+  </a>
 </p>
 
 <p align="center">
-  <strong>変換サイトも、Squooshも、もう開かない。</strong><br>
-  iPhoneの写真をMacに持ってきたあと、「JPEGにして、ちょうどいいサイズにして、軽くする」という毎回の作業を、画像を放り込むだけにするmacOSアプリです。
+  <strong>iPhone写真をドロップするだけで、軽くて使いやすいJPEGに。</strong><br>
+  HEICをJPEGへ変換し、ちょうどよい大きさに縮小・圧縮する、ローカル完結のmacOSアプリです。
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/macOS-14.0+-black?style=flat-square&logo=apple" alt="macOS 14.0+">
-  <img src="https://img.shields.io/badge/Swift-6.0-F05138?style=flat-square&logo=swift&logoColor=white" alt="Swift 6.0">
-  <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="MIT License">
-  <img src="https://img.shields.io/badge/Apple_Silicon-Native-success?style=flat-square" alt="Apple Silicon Native">
+  <a href="https://shoppie70.github.io/ImageDrop/downloads/ImageDrop-v1.0.0.dmg"><strong>DMGをダウンロード（v1.0.0・2.0 MB）</strong></a><br>
+  macOS 14 Sonoma以降・Apple Silicon Mac対応 · 無料 · 画像はMacの外へ送信しません
 </p>
 
 <p align="center">
-  <a href="https://shoppie70.github.io/ImageDrop/downloads/ImageDrop-v1.0.0.dmg"><strong>⬇️ DMGをダウンロード (v1.0.0)</strong></a> · <a href="https://shoppie70.github.io/ImageDrop/">🌐 Webサイト (LP)</a> · <a href="#使い方">📖 使い方</a> · <a href="#何をしてくれる">⚙️ 仕様</a> · <a href="#インストール--はじめる">🚀 インストール</a>
+  <a href="https://shoppie70.github.io/ImageDrop/">Webサイト</a> · <a href="#インストール">インストール方法</a> · <a href="#使い方">使い方</a> · <a href="https://github.com/shoppie70/ImageDrop">ソースコード</a>
 </p>
+
+> [!IMPORTANT]
+> 現在のDMGは **Apple Silicon（M1以降）用** です。個人開発のためAppleによる公証はされておらず、初回起動時にmacOSの警告が表示されることがあります。対処方法は[インストール](#インストール)を参照してください。
 
 ---
 
-## なんで作った？
+## 何をしてくれる？
 
-iPhoneで撮った写真をAirDropやGoogleフォトからMacへ持ってきて、メルカリの商品写真にしたり、会社のSlackへ送ったり、ブログへ載せたりする。
+HEIC / HEIF / JPEG / JPG / PNGをアプリへドロップすると、元画像と同じフォルダにJPEGを保存します。複数枚の一括処理にも対応します。
 
-そのたびに、ちょっとした面倒がありました。
+| 初期設定 | 内容 |
+| --- | --- |
+| 出力 | JPEG（`IMG_1234_compressed.jpg`） |
+| リサイズ | 最大長辺 1980px。小さい画像は拡大しない |
+| 圧縮 | JPEG品質 0.85 |
+| プライバシー | EXIF・GPS・撮影日時などのmetadataを削除 |
+| 保存 | 元画像は変更せず、同じフォルダへ保存 |
 
-**HEICのままだと使えないことがある。**  
-**そのままでは解像度もファイルサイズも大きすぎる。**
+最大長辺とJPEG品質はアプリ内で変更できます。EXIF Orientationをピクセルに反映するため、metadataを削除しても見た目の向きを維持します。
 
-そこで毎回、HEICをJPEGへ変換するWebサイトを開き、JPEGにして、必要ならSquooshを開いて、縮小して、圧縮して、保存していました。
+## インストール
 
-便利なツールはすでにあります。
+1. [ImageDrop-v1.0.0.dmg をダウンロード](https://shoppie70.github.io/ImageDrop/downloads/ImageDrop-v1.0.0.dmg)して開きます。
+2. `ImageDrop.app` を `Applications` フォルダへドラッグします。
+3. `Applications` から `ImageDrop` を起動します。
 
-でも、あるとき気づきました。
-
-> **なんで毎回、同じことを手でやってるんだ？**
-
-欲しかったのは高機能な画像編集ソフトではありません。
-
-写真を放り込んだら、**だいたいどこでも普通に使いやすいJPEG**になって返ってくる。それだけで十分でした。
-
-なので作りました。
-
-## Before / After
-
-### Before
-
-```text
-IMG_1234.HEIC
-    ↓
-変換サイトを開く
-    ↓
-JPEGへ変換
-    ↓
-必要ならSquooshを開く
-    ↓
-リサイズ・圧縮
-    ↓
-IMG_1234.jpg
-```
-
-### After
-
-```text
-IMG_1234.HEIC
-    ↓
-アプリへドロップ
-    ↓
-IMG_1234_compressed.jpg
-```
-
-**以上です。**
+> [!NOTE]
+> 初回起動時に「開発元を確認できないため開けません」と表示された場合は、［システム設定］>［プライバシーとセキュリティ］>［このまま開く］を選択してください。これは未公証の個人開発アプリに対するmacOSの通常の保護です。
 
 ## 使い方
 
-1. アプリを起動します。
-2. HEIC / HEIF / JPEG / JPG / PNGを、アプリ画面またはDockアイコンへドロップします。
-3. 元画像と同じフォルダに、縮小・圧縮済みのJPEGが作成されます。
+1. `ImageDrop` を起動します。
+2. HEIC / HEIF / JPEG / JPG / PNGをウィンドウ、またはDockのアイコンへドロップします。
+3. 同じフォルダに `*_compressed.jpg` ができます。
 
-複数枚まとめてドロップしても、そのまま処理します。
+変換のたびに保存先や品質を聞きません。元ファイルも上書きしません。
 
-## 何をしてくれる？
+## なぜ作った？
 
-初期設定では、画像を次の状態に整えます。
+変換サイトも、Squooshも、もう開かない。
 
-- **JPEGへ変換**
-- **最大長辺 1980px** に縮小
-- **JPEG品質 0.85** で圧縮
-- **EXIF / GPS / 撮影日時などのmetadataを削除**
-- **EXIF Orientationをピクセルへ反映**して、見た目の向きを維持
-- **複数ファイルをまとめて処理**
-- 元画像より小さい画像は**拡大しない**
-- 元画像は**変更・上書きしない**
+iPhoneで撮った写真をMacへ持ってきて、メルカリの商品写真、Slack、ブログなどに使おうとすると、HEICのままでは使えないことがある。そのままでは解像度もファイルサイズも大きすぎる。
 
-最大長辺とJPEG品質は変更できます。
+以前は毎回、変換サイトでJPEGにして、必要ならSquooshで縮小・圧縮していました。便利なツールはすでにある。でも、あるとき気づきました。
 
-| 項目 | 内容 |
-| --- | --- |
-| 入力 | HEIC / HEIF / JPEG / JPG / PNG |
-| 出力 | JPEG |
-| JPEG品質 | 初期値 0.85 |
-| 最大長辺 | 1280 / 1600 / 1980 / 2560 / 元のサイズ / 任意値 |
-| リサイズ | アスペクト比を維持。小さい画像は拡大しない |
-| 保存先 | 元画像と同じフォルダ |
-| ファイル名 | `IMG_1234_compressed.jpg`。重複時は連番 |
-| metadata | 初期設定で削除 |
+> **なんで毎回、同じことを手でやってるんだ？**
 
-## やらないこと
+```text
+以前: HEIC → 変換サイト → JPEG → Squoosh → 縮小・圧縮
+いま: HEIC → ImageDropへドロップ → JPEG
+```
 
-このアプリは画像編集ソフトを目指していません。
+欲しかったのは高機能な画像編集ソフトではありません。写真を放り込んだら、だいたいどこでも普通に使いやすいJPEGになって返ってくること。それだけです。
 
-- トリミングしない
-- フィルターをかけない
-- AI補正しない
-- クラウドへアップロードしない
-- アカウントを作らせない
-- 変換のたびに保存先や品質を聞かない
+## しないこと
 
-**JPEGにして、ちょうどいいサイズにして、軽くする。**
+- トリミング、フィルター、AI補正
+- クラウドへのアップロード、アカウント作成
+- 変換ごとの保存先・品質の確認
 
-それだけです。
+JPEGにして、ちょうどいいサイズにして、軽くする。それだけです。
 
-## ローカルで完結
+## 開発者向け
 
-画像処理にはSwiftUI / ImageIO / Core Graphics / VisionなどApple標準フレームワークを使用しています。
-
-画像を外部サーバーへ送信せず、Mac上で処理します。
-
-## SwiftもMacアプリ開発も初めてでした
-
-もう一つ、このアプリを作った理由があります。
-
-Swiftを使ったことも、macOSネイティブアプリを作ったこともありませんでした。
-
-せっかく自動化したい小さな不便を見つけたので、**自分が本当に使うものを作りながらSwift / SwiftUIを覚える題材にしよう**と思い、このプロジェクトを始めました。
-
-高機能なものを作ることより、毎日の小さな無駄を一つ消すことを優先しています。
-
-## インストール / はじめる
-
-### 1. DMG からインストール（推奨）
-
-[**⬇️ ImageDrop-v1.0.0.dmg (約2.0MB) をダウンロード**](https://shoppie70.github.io/ImageDrop/downloads/ImageDrop-v1.0.0.dmg)
-
-1. ダウンロードした `ImageDrop-v1.0.0.dmg` を開きます。
-2. 表示されたウィンドウで `ImageDrop.app` を `Applications` フォルダへドラッグ＆ドロップします。
-
-> **💡 初回起動時の注意**  
-> 本アプリは個人開発の未署名バイナリのため、初回起動時にセキュリティ警告が出る場合があります。  
-> その場合は、**［システム設定］＞［プライバシーとセキュリティ］＞［このまま開く］** をクリックしてください。
-
-### 2. ソースコードからビルド
-
-macOS 14以降とXcodeがインストールされている環境であれば、ソースからビルドして実行できます。
+SwiftUI、ImageIO、Core Graphics、VisionなどのApple標準フレームワークだけで実装しています。macOS 14以降とXcodeがあれば、ソースからも起動できます。
 
 ```bash
 git clone https://github.com/shoppie70/ImageDrop.git
@@ -163,25 +91,4 @@ cd ImageDrop
 open ImageDrop.xcodeproj
 ```
 
-Xcodeで`ImageDrop`スキームを選び、`⌘R`で起動してください。
-
-> リポジトリ名・Xcodeの内部ターゲット名には、旧称の `ImageDrop` が残っています。
-
-## Orientationについて
-
-EXIF Orientationは常に出力ピクセルへ焼き込み、metadataを削除しても正しい見た目を維持します。
-
-オプションの自動補正ではVisionの水平線検出を利用し、明瞭な90度のずれだけを保守的に補正します。Vision APIには確度と180度の天地を安全に判定する情報がないため、180度の自動補正は行いません。曖昧な写真はそのまま出力します。
-
-## 開発
-
-```bash
-swift test
-xcodebuild -project ImageDrop.xcodeproj -scheme ImageDrop -configuration Debug build
-```
-
-変換ロジックはSwiftUI Viewから分離し、リサイズ、ファイル名衝突、設定初期値、元ファイル保持、EXIF Orientation正規化などをテストしています。
-
-## ライセンス
-
-MIT License。自由に利用、改変、再配布できます。
+Xcodeで `ImageDrop` スキームを選び、`⌘R` で実行してください。変換ロジックのテストは `swift test` で実行できます。
