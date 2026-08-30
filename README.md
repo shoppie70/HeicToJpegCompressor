@@ -1,7 +1,7 @@
 # HEICをJPEGへ縮小圧縮するだけ.app
 
 <p align="center">
-  <img src="assets/ImageDrop.png" width="160" alt="HEICをJPEGへ縮小圧縮するだけ.app icon">
+  <img src="assets/ImageDrop.png" width="160" alt="HEICをJPEGへ縮小圧縮するだけ.app アイコン" style="border-radius: 22%; box-shadow: 0 12px 32px rgba(0,0,0,0.15);">
 </p>
 
 <p align="center">
@@ -10,7 +10,14 @@
 </p>
 
 <p align="center">
-  <a href="https://shoppie70.github.io/ImageDrop/">Webサイト</a> · <a href="#使い方">使い方</a> · <a href="#何をしてくれる">仕様</a> · <a href="#開発">開発</a>
+  <img src="https://img.shields.io/badge/macOS-14.0+-black?style=flat-square&logo=apple" alt="macOS 14.0+">
+  <img src="https://img.shields.io/badge/Swift-6.0-F05138?style=flat-square&logo=swift&logoColor=white" alt="Swift 6.0">
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="MIT License">
+  <img src="https://img.shields.io/badge/Apple_Silicon-Native-success?style=flat-square" alt="Apple Silicon Native">
+</p>
+
+<p align="center">
+  <a href="https://shoppie70.github.io/ImageDrop/downloads/ImageDrop-v1.0.0.dmg"><strong>⬇️ DMGをダウンロード (v1.0.0)</strong></a> · <a href="https://shoppie70.github.io/ImageDrop/">🌐 Webサイト (LP)</a> · <a href="#使い方">📖 使い方</a> · <a href="#何をしてくれる">⚙️ 仕様</a> · <a href="#インストール--はじめる">🚀 インストール</a>
 </p>
 
 ---
@@ -133,9 +140,22 @@ Swiftを使ったことも、macOSネイティブアプリを作ったことも�
 
 高機能なものを作ることより、毎日の小さな無駄を一つ消すことを優先しています。
 
-## はじめる
+## インストール / はじめる
 
-現時点ではソースからビルドして利用できます。macOS 14以降とXcodeが必要です。
+### 1. DMG からインストール（推奨）
+
+[**⬇️ ImageDrop-v1.0.0.dmg (約2.0MB) をダウンロード**](https://shoppie70.github.io/ImageDrop/downloads/ImageDrop-v1.0.0.dmg)
+
+1. ダウンロードした `ImageDrop-v1.0.0.dmg` を開きます。
+2. 表示されたウィンドウで `ImageDrop.app` を `Applications` フォルダへドラッグ＆ドロップします。
+
+> **💡 初回起動時の注意**  
+> 本アプリは個人開発の未署名バイナリのため、初回起動時にセキュリティ警告が出る場合があります。  
+> その場合は、**［システム設定］＞［プライバシーとセキュリティ］＞［このまま開く］** をクリックしてください。
+
+### 2. ソースコードからビルド
+
+macOS 14以降とXcodeがインストールされている環境であれば、ソースからビルドして実行できます。
 
 ```bash
 git clone https://github.com/shoppie70/ImageDrop.git

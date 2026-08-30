@@ -9,30 +9,48 @@
     <meta property="og:description" content="変換サイトも、Squooshも、もう開かない。画像を放り込むだけのmacOSアプリ。">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://raw.githubusercontent.com/shoppie70/ImageDrop/main/assets/ImageDrop.png">
-    <title>HEICをJPEGへ縮小圧縮するだけ.app</title>
+    <title>HEICをJPEGへ縮小圧縮するだけ.app - macOS画像変換ユーティリティ</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/ImageDrop.png">
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="トップへ">
-        <span class="brand-mark" aria-hidden="true">↓</span>
+        <img class="brand-icon" src="assets/ImageDrop.png" alt="" width="28" height="28">
         <span>HEIC → JPEG</span>
       </a>
       <nav class="header-nav" aria-label="ページ内ナビゲーション">
         <a href="#why">なんで作った？</a>
+        <a href="#features">仕様・できること</a>
+        <a class="nav-download" href="downloads/ImageDrop-v1.0.0.dmg" download>ダウンロード <span aria-hidden="true">↓</span></a>
         <a class="github-link" href="https://github.com/shoppie70/ImageDrop">GitHub <span aria-hidden="true">↗</span></a>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <p class="eyebrow">A VERY SMALL macOS APP</p>
-        <h1 id="hero-title"><span>HEICをJPEGへ</span><br>縮小圧縮するだけ<span class="dot-app">.app</span></h1>
-        <p class="hero-lede">変換サイトも、Squooshも、<br class="mobile-break">もう開かない。</p>
-        <p class="hero-copy">iPhoneの写真をMacに持ってきたあと、<strong>「JPEGにして、ちょうどいいサイズにして、軽くする」</strong>という毎回の作業を、画像を放り込むだけにするmacOSアプリです。</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="https://github.com/shoppie70/ImageDrop">ソースを見る <span aria-hidden="true">→</span></a>
-          <a class="button button-secondary" href="#after">どれだけ簡単？</a>
+        <div class="hero-content">
+          <div class="hero-text">
+            <p class="eyebrow">A VERY SMALL macOS APP</p>
+            <h1 id="hero-title"><span>HEICをJPEGへ</span><br>縮小圧縮するだけ<span class="dot-app">.app</span></h1>
+            <p class="hero-lede">変換サイトも、Squooshも、<br class="mobile-break">もう開かない。</p>
+            <p class="hero-copy">iPhoneの写真をMacに持ってきたあと、<strong>「JPEGにして、ちょうどいいサイズにして、軽くする」</strong>という毎回の作業を、画像を放り込むだけにするmacOSアプリです。</p>
+            
+            <div class="hero-actions">
+              <a class="button button-download" href="downloads/ImageDrop-v1.0.0.dmg" download>
+                <span class="btn-icon" aria-hidden="true">↓</span>
+                <span>ダウンロード (v1.0.0)</span>
+              </a>
+              <a class="button button-secondary" href="https://github.com/shoppie70/ImageDrop">GitHubで見る <span aria-hidden="true">→</span></a>
+            </div>
+            <p class="hero-note">macOS 14.0 (Sonoma) 以降対応 · Apple Silicon / Intel · 無料 (MIT License)</p>
+          </div>
+          <div class="hero-visual">
+            <div class="icon-stage">
+              <img class="hero-app-icon" src="assets/ImageDrop.png" alt="HEICをJPEGへ縮小圧縮するだけ.app アイコン" width="220" height="220">
+              <div class="icon-reflection" aria-hidden="true"></div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -93,11 +111,11 @@
           <span>最大長辺 1980px</span>
           <span>品質 85%</span>
           <span>metadata削除</span>
-          <span>複数枚対応</span>
+          <span>複数枚一括対応</span>
         </div>
       </section>
 
-      <section class="section jobs-section" aria-labelledby="jobs-title">
+      <section class="section jobs-section" id="features" aria-labelledby="jobs-title">
         <div class="section-heading">
           <p class="eyebrow">ONE JOB. DONE WELL.</p>
           <h2 id="jobs-title">すること。</h2>
@@ -160,22 +178,36 @@
       <section class="spec-strip" aria-label="主な仕様">
         <div><span>INPUT</span><strong>HEIC / HEIF<br>JPEG / PNG</strong></div>
         <div><span>OUTPUT</span><strong>JPEG</strong></div>
-        <div><span>PROCESS</span><strong>100% LOCAL</strong></div>
-        <div><span>PRICE</span><strong>FREE / MIT</strong></div>
+        <div><span>PROCESS</span><strong>100% LOCAL<br>(Apple Frameworks)</strong></div>
+        <div><span>PRICE</span><strong>FREE / MIT<br>(Open Source)</strong></div>
       </section>
 
       <section class="final-cta" aria-labelledby="cta-title">
-        <img src="https://raw.githubusercontent.com/shoppie70/ImageDrop/main/assets/ImageDrop.png" alt="アプリアイコン" width="104" height="104">
+        <div class="cta-icon-wrapper">
+          <img class="cta-app-icon" src="assets/ImageDrop.png" alt="アプリアイコン" width="120" height="120">
+        </div>
         <p class="eyebrow">THAT'S IT.</p>
         <h2 id="cta-title">JPEGにして、<br>ちょうどいいサイズにして、<br>軽くする。</h2>
         <p>それ以上でも、それ以下でもないmacOSアプリです。</p>
-        <a class="button button-primary" href="https://github.com/shoppie70/ImageDrop">GitHubで見る <span aria-hidden="true">→</span></a>
+        
+        <div class="cta-actions">
+          <a class="button button-download" href="downloads/ImageDrop-v1.0.0.dmg" download>
+            <span class="btn-icon" aria-hidden="true">↓</span>
+            <span>ImageDrop v1.0.0 をダウンロード (DMG)</span>
+          </a>
+          <a class="button button-secondary" href="https://github.com/shoppie70/ImageDrop">GitHubでソースを見る <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="launch-tip">
+          <strong>💡 初回起動時に警告が表示された場合</strong>
+          <p>macOSの［システム設定］＞［プライバシーとセキュリティ］＞［このまま開く］をクリックしてください。</p>
+        </div>
       </section>
     </main>
 
     <footer>
       <span>HEICをJPEGへ縮小圧縮するだけ.app</span>
-      <span>Repository / internal name: ImageDrop</span>
+      <span>Repository: <a href="https://github.com/shoppie70/ImageDrop">ImageDrop</a></span>
       <a href="https://github.com/shoppie70/ImageDrop/blob/main/LICENSE">MIT License</a>
     </footer>
   </body>
