@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f9fc">
     <meta name="description" content="画像をドラッグ＆ドロップするだけで、JPEGへ変換し、圧縮・リサイズするmacOSアプリ、ImageDrop。">
     <meta property="og:title" content="ImageDrop — 画像を、落とすだけ。">
     <meta property="og:description" content="JPEG変換、圧縮、リサイズだけを行う、シンプルなmacOSアプリ。">
@@ -12,107 +13,179 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <a class="skip-link" href="#main">本文へ移動</a>
+
     <header class="site-header">
       <a class="brand" href="#top" aria-label="ImageDrop トップへ">
-        <span class="brand-mark" aria-hidden="true">↓</span>
+        <img src="https://raw.githubusercontent.com/shoppie70/ImageDrop/main/assets/ImageDrop.png" alt="" width="36" height="36">
         <span>ImageDrop</span>
       </a>
-      <a class="github-link" href="https://github.com/shoppie70/ImageDrop">GitHubで見る <span aria-hidden="true">↗</span></a>
+      <nav aria-label="メインナビゲーション">
+        <a href="#how-to-use">使い方</a>
+        <a href="#features">特徴</a>
+        <a class="nav-cta" href="https://github.com/shoppie70/ImageDrop">GitHubで見る <span aria-hidden="true">↗</span></a>
+      </nav>
     </header>
 
-    <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <p class="eyebrow">macOS IMAGE CONVERTER</p>
-        <h1 id="hero-title">画像を、<br>落とすだけ。</h1>
-        <p class="hero-lede">JPEGへ変換し、圧縮・リサイズします。</p>
-        <p class="hero-copy">ただそれだけを行う、極めてシンプルなアプリです。<br>機能が一つしか無いからこそ、便利です。</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="https://github.com/shoppie70/ImageDrop">GitHubで見る <span aria-hidden="true">→</span></a>
-          <a class="button button-secondary" href="#how-it-works">できることを見る</a>
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="product-label"><span aria-hidden="true">•</span> macOS 14+ · Open Source</p>
+          <h1 id="hero-title"><span>画像を、</span><span>落とすだけ。</span></h1>
+          <p class="hero-lede">JPEGへの変換、圧縮、リサイズ。面倒な画像の下ごしらえを、ドラッグ＆ドロップだけで終わらせます。</p>
+          <p class="hero-note">ただそれだけを行う、極めてシンプルなアプリです。<br>機能が一つしか無いからこそ、便利です。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://github.com/shoppie70/ImageDrop">GitHubで見る <span aria-hidden="true">→</span></a>
+            <span class="format-note">HEIC · JPEG · PNG / 複数可</span>
+          </div>
+        </div>
+
+        <div class="product-stage" aria-label="ImageDropの変換イメージ">
+          <img class="app-icon" src="https://raw.githubusercontent.com/shoppie70/ImageDrop/main/assets/ImageDrop.png" alt="ImageDropのアプリアイコン" width="112" height="112">
+          <div class="app-window">
+            <div class="window-toolbar">
+              <span class="traffic-lights" aria-hidden="true"><i>•</i><i>•</i><i>•</i></span>
+              <strong>ImageDrop</strong>
+              <span class="toolbar-spacer" aria-hidden="true">.</span>
+            </div>
+            <div class="window-content">
+              <p class="window-description">画像をドロップするだけで、Web向けJPEGを保存します。</p>
+              <div class="drop-zone">
+                <svg viewBox="0 0 24 24" width="38" height="38" aria-hidden="true">
+                  <path d="M12 3v12m0 0 5-5m-5 5-5-5M5 19h14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <strong>画像をここにドロップ</strong>
+                <span>HEIC / JPEG / PNG / 複数可</span>
+              </div>
+              <div class="settings-preview">
+                <span>最大長辺 1980 px</span>
+                <span>JPEG品質 0.85</span>
+              </div>
+              <div class="conversion-result">
+                <div>
+                  <span>変換完了</span>
+                  <strong>IMG_1234_compressed.jpg</strong>
+                </div>
+                <strong>4.8 MB → 782 KB</strong>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="drop-card" aria-label="ImageDropの使い方">
-        <p class="drop-file">IMG_1234.HEIC</p>
-        <div class="drop-target">
-          <span class="drop-arrow" aria-hidden="true">↓</span>
-          <strong>ImageDrop</strong>
-          <span>画像をここにドロップ</span>
-        </div>
-        <p class="drop-result">IMG_1234_compressed.jpg</p>
+      <ul class="quick-facts" aria-label="ImageDropの概要">
+        <li><strong>3形式</strong><span>HEIC / JPEG / PNG</span></li>
+        <li><strong>複数画像</strong><span>まとめて変換</span></li>
+        <li><strong>元画像を保護</strong><span>変更・上書きなし</span></li>
+        <li><strong>Privacy first</strong><span>metadata削除</span></li>
+      </ul>
+
+      <section class="promise" aria-labelledby="promise-title">
+        <p class="section-label">Why ImageDrop</p>
+        <h2 id="promise-title"><span>変換のために、</span><span>編集画面を開かない。</span></h2>
+        <p>変換ボタンも、保存ダイアログも、プレビュー編集もありません。画像をImageDropへ落とすと、設定済みのサイズと品質でJPEGが完成します。</p>
       </section>
 
-      <section class="section flow-section" id="how-it-works" aria-labelledby="flow-title">
+      <section class="how-to-use" id="how-to-use" aria-labelledby="flow-title">
         <div class="section-heading">
-          <p class="eyebrow">ONE SIMPLE FLOW</p>
-          <h2 id="flow-title">やることは、ひとつ。</h2>
+          <div>
+            <p class="section-label">How it works</p>
+            <h2 id="flow-title">使い方は、3ステップ。</h2>
+          </div>
+          <p>Finderから画像を選んだら、あとはImageDropへ渡すだけです。</p>
         </div>
-        <ol class="flow-list">
+
+        <ol class="flow">
           <li>
-            <span class="flow-number">01</span>
-            <h3>画像を落とす</h3>
-            <p>HEIC、JPEG、PNGを、アプリ画面またはDockアイコンへ。</p>
+            <div class="step-visual">
+              <span class="step-number">1</span>
+              <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true">
+                <path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h5l2 2H18.5A1.5 1.5 0 0 1 20 7.5v10a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <h3>画像を選ぶ</h3>
+            <p>Finderで、変換したい画像を1枚または複数選びます。</p>
           </li>
           <li>
-            <span class="flow-number">02</span>
-            <h3>自動で変換</h3>
-            <p>JPEG化、圧縮、リサイズを設定どおりにまとめて実行。</p>
+            <div class="step-visual">
+              <span class="step-number">2</span>
+              <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true">
+                <path d="M12 3v12m0 0 5-5m-5 5-5-5M5 19h14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <h3>ImageDropへ落とす</h3>
+            <p>アプリ画面、またはDockのアイコンへドラッグ＆ドロップします。</p>
           </li>
           <li>
-            <span class="flow-number">03</span>
-            <h3>すぐに使える</h3>
-            <p>元画像と同じフォルダに、Web向けJPEGを保存します。</p>
+            <div class="step-visual">
+              <span class="step-number">3</span>
+              <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true">
+                <path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <h3>JPEGが完成</h3>
+            <p>元画像と同じフォルダへ、圧縮・リサイズ済みのJPEGを保存します。</p>
           </li>
         </ol>
       </section>
 
-      <section class="section details-section" aria-labelledby="details-title">
+      <section class="features" id="features" aria-labelledby="features-title">
         <div class="section-heading">
-          <p class="eyebrow">SMALL, ON PURPOSE</p>
-          <h2 id="details-title">余計なことは、しません。</h2>
+          <div>
+            <p class="section-label">Built for the routine</p>
+            <h2 id="features-title">
+              <span>毎回の作業を、</span>
+              <span>迷わず終わらせる。</span>
+            </h2>
+          </div>
+          <p>普段使いに必要な設定だけを、いつでも変更できます。</p>
         </div>
-        <div class="detail-grid">
+
+        <div class="feature-grid">
           <article>
-            <p class="detail-label">WEB READY</p>
-            <h3>JPEGに変換</h3>
-            <p>品質は調整可能。初期値は、見た目と容量のバランスを考えた0.85です。</p>
+            <span class="feature-index">01</span>
+            <h3>Web向けにリサイズ</h3>
+            <p>長辺は1280〜2560pxまたは原寸。小さい画像は拡大しません。</p>
           </article>
           <article>
-            <p class="detail-label">RIGHT SIZE</p>
-            <h3>大きすぎる画像を整える</h3>
-            <p>長辺を指定サイズまで縮小。小さい画像を無理に拡大することはありません。</p>
+            <span class="feature-index">02</span>
+            <h3>品質を調整</h3>
+            <p>JPEG品質は0.0〜1.0。初期値は見た目と容量のバランスが良い0.85です。</p>
           </article>
           <article>
-            <p class="detail-label">PRIVATE BY DEFAULT</p>
+            <span class="feature-index">03</span>
             <h3>metadataを削除</h3>
-            <p>位置情報、撮影日時、カメラ情報などを、初期設定で出力ファイルに残しません。</p>
+            <p>位置情報、撮影日時、カメラ情報などを初期設定で出力に残しません。</p>
           </article>
           <article>
-            <p class="detail-label">ORIGINALS STAY SAFE</p>
-            <h3>元画像は触らない</h3>
-            <p>変換結果は別ファイルとして保存。元画像を変更・上書きすることはありません。</p>
+            <span class="feature-index">04</span>
+            <h3>元画像を守る</h3>
+            <p>変換結果は別ファイルとして保存。元画像を変更・上書きしません。</p>
           </article>
         </div>
       </section>
 
-      <section class="spec-strip" aria-label="主な仕様">
-        <div><span>入力</span><strong>HEIC / JPEG / PNG</strong></div>
-        <div><span>出力</span><strong>JPEG</strong></div>
-        <div><span>対応</span><strong>複数ファイル</strong></div>
-        <div><span>フレームワーク</span><strong>Apple標準のみ</strong></div>
-      </section>
-
-      <section class="final-cta" aria-labelledby="cta-title">
-        <p class="eyebrow">OPEN SOURCE</p>
-        <h2 id="cta-title">シンプルな変換を、<br>もっと気軽に。</h2>
-        <p>Swift / SwiftUIで作った、軽量なネイティブmacOSアプリです。</p>
-        <a class="button button-primary" href="https://github.com/shoppie70/ImageDrop">GitHubで見る <span aria-hidden="true">→</span></a>
+      <section class="closing" aria-labelledby="closing-title">
+        <img src="https://raw.githubusercontent.com/shoppie70/ImageDrop/main/assets/ImageDrop.png" alt="" width="76" height="76">
+        <div>
+          <p class="section-label">ImageDrop for macOS</p>
+          <h2 id="closing-title">画像変換を、もっと気軽に。</h2>
+          <p>Swift / SwiftUIとApple標準Frameworkだけで作った、オープンソースのmacOSアプリです。</p>
+        </div>
+        <a class="button button-light" href="https://github.com/shoppie70/ImageDrop">GitHubで見る <span aria-hidden="true">→</span></a>
       </section>
     </main>
 
     <footer>
-      <span>© 2026 ImageDrop</span>
-      <a href="https://github.com/shoppie70/ImageDrop/blob/main/LICENSE">MIT License</a>
+      <a class="brand" href="#top">
+        <img src="https://raw.githubusercontent.com/shoppie70/ImageDrop/main/assets/ImageDrop.png" alt="" width="28" height="28">
+        <span>ImageDrop</span>
+      </a>
+      <div>
+        <a href="https://github.com/shoppie70/ImageDrop">GitHub</a>
+        <a href="https://github.com/shoppie70/ImageDrop/blob/main/LICENSE">MIT License</a>
+      </div>
+      <span>© 2026</span>
     </footer>
   </body>
 </html>
