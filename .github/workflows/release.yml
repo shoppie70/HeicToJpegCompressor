@@ -1,0 +1,59 @@
+name: Release DMG
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: macos-14
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build universal Release app
+        run: |
+          xcodebuild \
+            -project ImageDrop.xcodeproj \
+            -scheme ImageDrop \
+            -configuration Release \
+            -derivedDataPath "$RUNNER_TEMP/ImageDropDerivedData" \
+            ARCHS="arm64 x86_64" \
+            ONLY_ACTIVE_ARCH=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Install DMG builders
+        run: |
+          brew install create-dmg
+          python -m pip install "dmgbuild==1.6.7"
+
+      - name: Build DMG
+        env:
+          APP_PATH: ${{ runner.temp }}/ImageDropDerivedData/Build/Products/Release/ImageDrop.app
+          OUTPUT_DIR: ${{ github.workspace }}/dist
+          VERSION: ${{ github.ref_name }}
+        run: scripts/build_dmg.sh
+
+      - name: Create GitHub Release and upload DMG
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DMG_PATH: dist/ImageDrop-${{ github.ref_name }}.dmg
+        run: |
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            gh release upload "$GITHUB_REF_NAME" "$DMG_PATH" --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" "$DMG_PATH" \
+              --title "$GITHUB_REF_NAME" \
+              --generate-notes
+          fi

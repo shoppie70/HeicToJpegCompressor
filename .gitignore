@@ -36,3 +36,8 @@ build/
 *.tmp
 *.swp
 *~
+__pycache__/
+*.py[cod]
+
+# Release artifacts
+dist/
