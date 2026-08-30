@@ -40,4 +40,5 @@ __pycache__/
 *.py[cod]
 
 # Release artifacts
-dist/
+dist/*
+!dist/*.dmg
