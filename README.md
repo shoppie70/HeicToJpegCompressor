@@ -1,7 +1,7 @@
 # HEICをJPEGへ縮小圧縮するだけ.app
 
 <p align="center">
-  <img src="assets/ImageDrop.png" width="160" alt="HEICをJPEGへ縮小圧縮するだけ.app icon">
+  <img src="assets/ImageDrop.png" width="160" alt="HEICをJPEGへ縮小圧縮するだけ.app アイコン" style="border-radius: 22%; box-shadow: 0 12px 32px rgba(0,0,0,0.15);">
 </p>
 
 <p align="center">
@@ -10,7 +10,14 @@
 </p>
 
 <p align="center">
-  <a href="https://shoppie70.github.io/ImageDrop/">Webサイト</a> · <a href="#使い方">使い方</a> · <a href="#何をしてくれる">仕様</a> · <a href="#開発">開発</a>
+  <img src="https://img.shields.io/badge/macOS-14.0+-black?style=flat-square&logo=apple" alt="macOS 14.0+">
+  <img src="https://img.shields.io/badge/Swift-6.0-F05138?style=flat-square&logo=swift&logoColor=white" alt="Swift 6.0">
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="MIT License">
+  <img src="https://img.shields.io/badge/Apple_Silicon-Native-success?style=flat-square" alt="Apple Silicon Native">
+</p>
+
+<p align="center">
+  <a href="https://shoppie70.github.io/ImageDrop/">🌐 Webサイト (LP)</a> · <a href="#使い方">📖 使い方</a> · <a href="#何をしてくれる">⚙️ 仕様</a> · <a href="#開発">🛠 開発</a>
 </p>
 
 ---
