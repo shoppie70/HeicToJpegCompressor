@@ -1,7 +1,7 @@
 # HEICをJPEGへ縮小圧縮するだけ.app
 
 <p align="center">
-  <a href="https://shoppie70.github.io/ImageDrop/downloads/ImageDrop-v1.0.0.dmg">
+  <a href="https://github.com/shoppie70/ImageDrop/releases/download/v1.0.0/ImageDrop-v1.0.0.dmg">
     <img src="assets/ImageDrop.png" width="144" alt="HEICをJPEGへ縮小圧縮するだけ.app のアイコン">
   </a>
 </p>
@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <a href="https://shoppie70.github.io/ImageDrop/downloads/ImageDrop-v1.0.0.dmg"><strong>DMGをダウンロード（v1.0.0・2.0 MB）</strong></a><br>
+  <a href="https://github.com/shoppie70/ImageDrop/releases/download/v1.0.0/ImageDrop-v1.0.0.dmg"><strong>DMGをダウンロード（v1.0.0・2.0 MB）</strong></a><br>
   macOS 14 Sonoma以降・Apple Silicon Mac対応 · 無料 · 画像はMacの外へ送信しません
 </p>
 
@@ -41,7 +41,7 @@ HEIC / HEIF / JPEG / JPG / PNGをアプリへドロップすると、元画像�
 
 ## インストール
 
-1. [ImageDrop-v1.0.0.dmg をダウンロード](https://shoppie70.github.io/ImageDrop/downloads/ImageDrop-v1.0.0.dmg)して開きます。
+1. [ImageDrop-v1.0.0.dmg をダウンロード](https://github.com/shoppie70/ImageDrop/releases/download/v1.0.0/ImageDrop-v1.0.0.dmg)して開きます。
 2. `ImageDrop.app` を `Applications` フォルダへドラッグします。
 3. `Applications` から `ImageDrop` を起動します。
 
