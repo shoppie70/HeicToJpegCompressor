@@ -1,4 +1,4 @@
-import ImageDropCore
+import HeicToJpegCompressorCore
 import SwiftUI
 import UniformTypeIdentifiers
 

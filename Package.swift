@@ -2,15 +2,15 @@
 import PackageDescription
 
 let package = Package(
-    name: "ImageDrop",
+    name: "HeicToJpegCompressor",
     platforms: [.macOS(.v14)],
     products: [
-        .library(name: "ImageDropCore", targets: ["ImageDropCore"]),
-        .executable(name: "ImageDrop", targets: ["ImageDropApp"])
+        .library(name: "HeicToJpegCompressorCore", targets: ["HeicToJpegCompressorCore"]),
+        .executable(name: "HeicToJpegCompressor", targets: ["HeicToJpegCompressorApp"])
     ],
     targets: [
-        .target(name: "ImageDropCore"),
-        .executableTarget(name: "ImageDropApp", dependencies: ["ImageDropCore"], exclude: ["Info.plist", "Assets.xcassets"]),
-        .testTarget(name: "ImageDropCoreTests", dependencies: ["ImageDropCore"])
+        .target(name: "HeicToJpegCompressorCore"),
+        .executableTarget(name: "HeicToJpegCompressorApp", dependencies: ["HeicToJpegCompressorCore"], exclude: ["Info.plist", "Assets.xcassets"]),
+        .testTarget(name: "HeicToJpegCompressorCoreTests", dependencies: ["HeicToJpegCompressorCore"])
     ]
 )

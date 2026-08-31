@@ -1,12 +1,12 @@
-# ImageDrop Specification v1.0
+# HEICをJPEGへ縮小圧縮するだけ Specification v1.0
 
 ## 1. Overview
 
-ImageDrop is a minimal macOS image conversion utility. Its primary use case is converting photos from iPhone / cloud photo services into lightweight JPEG files suitable for web uploads.
+`HeicToJpegCompressor` is a minimal macOS image conversion utility distributed under the Japanese display name “HEICをJPEGへ縮小圧縮するだけ”. Its primary use case is converting photos from iPhone / cloud photo services into lightweight JPEG files suitable for web uploads.
 
 The product principle is:
 
-> Drag images onto ImageDrop and receive web-ready JPEG files without opening an editor or configuring settings each time.
+> Drag images onto HEICをJPEGへ縮小圧縮するだけ and receive web-ready JPEG files without opening an editor or configuring settings each time.
 
 The application should stay intentionally small and native. Do not introduce unnecessary frameworks, services, databases, or abstraction layers.
 
@@ -167,7 +167,7 @@ This behavior is not user-configurable.
 
 ### 7.2 Stage 2: content-based automatic rotation
 
-ImageDrop should also try to correct images that are visually sideways or upside down even when the stored orientation metadata itself appears valid.
+HEICをJPEGへ縮小圧縮するだけ should also try to correct images that are visually sideways or upside down even when the stored orientation metadata itself appears valid.
 
 Setting:
 
@@ -367,8 +367,8 @@ Return clear but concise errors to the UI.
 Keep this pragmatic rather than architectural for its own sake.
 
 ```text
-ImageDrop/
-├── ImageDropApp.swift
+HeicToJpegCompressor/
+├── HeicToJpegCompressorApp.swift
 ├── AppDelegate.swift
 ├── Views/
 │   ├── ContentView.swift

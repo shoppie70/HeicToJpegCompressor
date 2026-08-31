@@ -1,8 +1,8 @@
 # HEICをJPEGへ縮小圧縮するだけ.app
 
 <p align="center">
-  <a href="https://github.com/shoppie70/ImageDrop/releases/download/v1.0.0/ImageDrop-v1.0.0.dmg">
-    <img src="assets/ImageDrop.png" width="144" alt="HEICをJPEGへ縮小圧縮するだけ.app のアイコン">
+  <a href="https://github.com/shoppie70/HeicToJpegCompressor/releases/download/v1.1.0/HeicToJpegCompressor-v1.1.0.dmg">
+    <img src="assets/HeicToJpegCompressor.png" width="144" alt="HEICをJPEGへ縮小圧縮するだけ.app のアイコン">
   </a>
 </p>
 
@@ -12,16 +12,16 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/shoppie70/ImageDrop/releases/download/v1.0.0/ImageDrop-v1.0.0.dmg"><strong>DMGをダウンロード（v1.0.0・2.0 MB）</strong></a><br>
-  macOS 14 Sonoma以降・Apple Silicon Mac対応 · 無料 · 画像はMacの外へ送信しません
+  <a href="https://github.com/shoppie70/HeicToJpegCompressor/releases/download/v1.1.0/HeicToJpegCompressor-v1.1.0.dmg"><strong>DMGをダウンロード（v1.1.0）</strong></a><br>
+  macOS 14 Sonoma以降・Apple Silicon / Intel Mac対応 · 無料 · 画像はMacの外へ送信しません
 </p>
 
 <p align="center">
-  <a href="https://shoppie70.github.io/ImageDrop/">Webサイト</a> · <a href="#インストール">インストール方法</a> · <a href="#使い方">使い方</a> · <a href="https://github.com/shoppie70/ImageDrop">ソースコード</a>
+  <a href="https://shoppie70.github.io/HeicToJpegCompressor/">Webサイト</a> · <a href="#インストール">インストール方法</a> · <a href="#使い方">使い方</a> · <a href="https://github.com/shoppie70/HeicToJpegCompressor">ソースコード</a>
 </p>
 
 > [!IMPORTANT]
-> 現在のDMGは **Apple Silicon（M1以降）用** です。個人開発のためAppleによる公証はされておらず、初回起動時にmacOSの警告が表示されることがあります。対処方法は[インストール](#インストール)を参照してください。
+> 現在のDMGは **Apple Silicon / Intel Mac対応のUniversal版** です。個人開発のためAppleによる公証はされておらず、初回起動時にmacOSの警告が表示されることがあります。対処方法は[インストール](#インストール)を参照してください。
 
 ---
 
@@ -41,16 +41,16 @@ HEIC / HEIF / JPEG / JPG / PNGをアプリへドロップすると、元画像�
 
 ## インストール
 
-1. [ImageDrop-v1.0.0.dmg をダウンロード](https://github.com/shoppie70/ImageDrop/releases/download/v1.0.0/ImageDrop-v1.0.0.dmg)して開きます。
-2. `ImageDrop.app` を `Applications` フォルダへドラッグします。
-3. `Applications` から `ImageDrop` を起動します。
+1. [HeicToJpegCompressor-v1.1.0.dmg をダウンロード](https://github.com/shoppie70/HeicToJpegCompressor/releases/download/v1.1.0/HeicToJpegCompressor-v1.1.0.dmg)して開きます。
+2. `HEICをJPEGへ縮小圧縮するだけ.app` を `Applications` フォルダへドラッグします。
+3. `Applications` から `HEICをJPEGへ縮小圧縮するだけ` を起動します。
 
 > [!NOTE]
 > 初回起動時に「開発元を確認できないため開けません」と表示された場合は、［システム設定］>［プライバシーとセキュリティ］>［このまま開く］を選択してください。これは未公証の個人開発アプリに対するmacOSの通常の保護です。
 
 ## 使い方
 
-1. `ImageDrop` を起動します。
+1. `HEICをJPEGへ縮小圧縮するだけ` を起動します。
 2. HEIC / HEIF / JPEG / JPG / PNGをウィンドウ、またはDockのアイコンへドロップします。
 3. 同じフォルダに `*_compressed.jpg` ができます。
 
@@ -68,7 +68,7 @@ iPhoneで撮った写真をMacへ持ってきて、メルカリの商品写真�
 
 ```text
 以前: HEIC → 変換サイト → JPEG → Squoosh → 縮小・圧縮
-いま: HEIC → ImageDropへドロップ → JPEG
+いま: HEIC → HEICをJPEGへ縮小圧縮するだけへドロップ → JPEG
 ```
 
 欲しかったのは高機能な画像編集ソフトではありません。写真を放り込んだら、だいたいどこでも普通に使いやすいJPEGになって返ってくること。それだけです。
@@ -86,9 +86,9 @@ JPEGにして、ちょうどいいサイズにして、軽くする。それだ�
 SwiftUI、ImageIO、Core Graphics、VisionなどのApple標準フレームワークだけで実装しています。macOS 14以降とXcodeがあれば、ソースからも起動できます。
 
 ```bash
-git clone https://github.com/shoppie70/ImageDrop.git
-cd ImageDrop
-open ImageDrop.xcodeproj
+git clone https://github.com/shoppie70/HeicToJpegCompressor.git
+cd HeicToJpegCompressor
+open HeicToJpegCompressor.xcodeproj
 ```
 
-Xcodeで `ImageDrop` スキームを選び、`⌘R` で実行してください。変換ロジックのテストは `swift test` で実行できます。
+Xcodeで `HeicToJpegCompressor` スキームを選び、`⌘R` で実行してください。変換ロジックのテストは `swift test` で実行できます。

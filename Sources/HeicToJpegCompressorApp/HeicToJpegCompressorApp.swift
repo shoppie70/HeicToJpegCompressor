@@ -1,10 +1,10 @@
 import AppKit
-import ImageDropCore
+import HeicToJpegCompressorCore
 import SwiftUI
 @preconcurrency import UserNotifications
 
 @main
-struct ImageDropApp: App {
+struct HeicToJpegCompressorApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @StateObject private var viewModel = ConversionViewModel()
 
@@ -134,7 +134,7 @@ enum NotificationService {
         center.requestAuthorization(options: [.alert]) { granted, _ in
             guard granted else { return }
             let content = UNMutableNotificationContent()
-            content.title = "ImageDrop"
+            content.title = "HEICをJPEGへ縮小圧縮するだけ"
             content.body = summary.failed == 0 && summary.skipped == 0
                 ? "\(summary.converted)枚の画像を変換しました"
                 : "\(summary.converted)枚を変換、\(summary.failed + summary.skipped)件は変換されませんでした"

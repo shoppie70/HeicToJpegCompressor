@@ -1,11 +1,11 @@
 import CoreGraphics
 import Foundation
-import ImageDropCore
+import HeicToJpegCompressorCore
 import ImageIO
 import Testing
 
-@Suite("ImageDrop conversion utilities")
-struct ImageDropCoreTests {
+@Suite("HEIC to JPEG conversion utilities")
+struct HeicToJpegCompressorCoreTests {
     @Test func resizePreservesAspectRatio() {
         #expect(ImageDimensions.resizedSize(for: CGSize(width: 4032, height: 3024), maximumLongEdge: 1980) == CGSize(width: 1980, height: 1485))
         #expect(ImageDimensions.resizedSize(for: CGSize(width: 3024, height: 4032), maximumLongEdge: 1980) == CGSize(width: 1485, height: 1980))

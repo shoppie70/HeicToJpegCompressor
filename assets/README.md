@@ -1,4 +1,4 @@
-# ImageDrop DMG background
+# HEICをJPEGへ縮小圧縮するだけ DMG background
 
 `dmg-background.png` is the Finder background used by `scripts/build_dmg.sh`.
 The editable source is `dmg-background.svg` so the release asset can be
@@ -55,7 +55,7 @@ in parentheses are doubled for the Retina canvas.
 
 | Element | Center / bounds in points | Retina pixels |
 | --- | --- | --- |
-| `ImageDrop.app` Finder icon | center `(180, 140)` | `(360, 280)` |
+| `HeicToJpegCompressor.app` Finder icon | center `(180, 140)` | `(360, 280)` |
 | Direction arrow | from about `(260, 140)` to `(400, 140)` | `(520, 280)` to `(800, 280)` |
 | `Applications` Finder link | center `(480, 140)` | `(960, 280)` |
 | Help banner | bounds `(48, 252, 564, 100)` | `(96, 504, 1128, 200)` |

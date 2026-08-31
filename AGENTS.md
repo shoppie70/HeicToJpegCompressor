@@ -2,7 +2,7 @@
 
 ## Project
 
-ImageDrop is a minimal native macOS image conversion utility built with SwiftUI and Apple frameworks.
+HeicToJpegCompressor is a minimal native macOS image conversion utility distributed under the Japanese display name “HEICをJPEGへ縮小圧縮するだけ” and built with SwiftUI and Apple frameworks.
 
 Before changing behavior, read:
 

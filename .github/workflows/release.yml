@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   release:
-    runs-on: macos-14
+    runs-on: macos-15
 
     steps:
       - name: Check out repository
@@ -23,13 +23,16 @@ jobs:
 
       - name: Build universal Release app
         run: |
+          RELEASE_VERSION="${GITHUB_REF_NAME#v}"
           xcodebuild \
-            -project ImageDrop.xcodeproj \
-            -scheme ImageDrop \
+            -project HeicToJpegCompressor.xcodeproj \
+            -scheme HeicToJpegCompressor \
             -configuration Release \
-            -derivedDataPath "$RUNNER_TEMP/ImageDropDerivedData" \
+            -derivedDataPath "$RUNNER_TEMP/HeicToJpegCompressorDerivedData" \
             ARCHS="arm64 x86_64" \
             ONLY_ACTIVE_ARCH=NO \
+            MARKETING_VERSION="$RELEASE_VERSION" \
+            CURRENT_PROJECT_VERSION="$GITHUB_RUN_NUMBER" \
             CODE_SIGNING_ALLOWED=NO \
             build
 
@@ -40,7 +43,7 @@ jobs:
 
       - name: Build DMG
         env:
-          APP_PATH: ${{ runner.temp }}/ImageDropDerivedData/Build/Products/Release/ImageDrop.app
+          APP_PATH: ${{ runner.temp }}/HeicToJpegCompressorDerivedData/Build/Products/Release/HeicToJpegCompressor.app
           OUTPUT_DIR: ${{ github.workspace }}/dist
           VERSION: ${{ github.ref_name }}
         run: scripts/build_dmg.sh
@@ -48,12 +51,12 @@ jobs:
       - name: Create GitHub Release and upload DMG
         env:
           GH_TOKEN: ${{ github.token }}
-          DMG_PATH: dist/ImageDrop-${{ github.ref_name }}.dmg
+          DMG_PATH: dist/HeicToJpegCompressor-${{ github.ref_name }}.dmg
         run: |
           if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
             gh release upload "$GITHUB_REF_NAME" "$DMG_PATH" --clobber
           else
             gh release create "$GITHUB_REF_NAME" "$DMG_PATH" \
-              --title "$GITHUB_REF_NAME" \
+              --title "HEICをJPEGへ縮小圧縮するだけ $GITHUB_REF_NAME" \
               --generate-notes
           fi

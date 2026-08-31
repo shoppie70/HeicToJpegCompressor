@@ -6,11 +6,11 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 VERSION="${1:-${VERSION:-v0.0.0}}"
-APP_PATH="${2:-${APP_PATH:-$PROJECT_DIR/build/Release/ImageDrop.app}}"
+APP_PATH="${2:-${APP_PATH:-$PROJECT_DIR/build/Release/HeicToJpegCompressor.app}}"
 OUTPUT_DIR="${3:-${OUTPUT_DIR:-$PROJECT_DIR/dist}}"
 BACKGROUND_PATH="${DMG_BACKGROUND:-$PROJECT_DIR/assets/dmg-background.png}"
 DMG_BACKEND="${DMG_BACKEND:-auto}"
-DMG_NAME="ImageDrop-$VERSION.dmg"
+DMG_NAME="HeicToJpegCompressor-$VERSION.dmg"
 DMG_PATH="$OUTPUT_DIR/$DMG_NAME"
 
 if [[ "$(uname -s)" != "Darwin" ]]; then
@@ -28,9 +28,9 @@ if [[ ! "$VERSION" =~ ^[A-Za-z0-9][A-Za-z0-9._+-]*$ ]]; then
   exit 1
 fi
 
-if [[ ! -d "$APP_PATH" || "$(basename "$APP_PATH")" != "ImageDrop.app" ]]; then
-  echo "error: ImageDrop.app was not found at: $APP_PATH" >&2
-  echo "usage: $0 [version] [path/to/ImageDrop.app] [output-directory]" >&2
+if [[ ! -d "$APP_PATH" || "$(basename "$APP_PATH")" != "HeicToJpegCompressor.app" ]]; then
+  echo "error: HeicToJpegCompressor.app was not found at: $APP_PATH" >&2
+  echo "usage: $0 [version] [path/to/HeicToJpegCompressor.app] [output-directory]" >&2
   exit 1
 fi
 
@@ -78,7 +78,7 @@ esac
 
 mkdir -p "$OUTPUT_DIR"
 
-STAGING_DIR="$(mktemp -d "${TMPDIR:-/tmp}/imagedrop-dmg.XXXXXX")"
+STAGING_DIR="$(mktemp -d "${TMPDIR:-/tmp}/heictojpegcompressor-dmg.XXXXXX")"
 VERIFY_MOUNT_DIR=""
 VERIFY_MOUNTED=0
 cleanup() {
@@ -96,7 +96,7 @@ echo "Applying an ad-hoc signature to $APP_PATH"
 codesign --force --deep -s - "$APP_PATH"
 codesign --verify --deep --strict "$APP_PATH"
 
-ditto "$APP_PATH" "$STAGING_DIR/ImageDrop.app"
+ditto "$APP_PATH" "$STAGING_DIR/HeicToJpegCompressor.app"
 
 if [[ -e "$DMG_PATH" ]]; then
   echo "Removing existing artifact: $DMG_PATH"
@@ -106,13 +106,13 @@ fi
 echo "Creating $DMG_PATH with $DMG_BACKEND"
 if [[ "$DMG_BACKEND" == "create-dmg" ]]; then
   create-dmg \
-    --volname "ImageDrop Installer" \
+    --volname "HEICをJPEGへ縮小圧縮するだけ" \
     --background "$BACKGROUND_PATH" \
     --window-pos 200 120 \
     --window-size 660 400 \
     --icon-size 100 \
-    --icon "ImageDrop.app" 180 140 \
-    --hide-extension "ImageDrop.app" \
+    --icon "HeicToJpegCompressor.app" 180 140 \
+    --hide-extension "HeicToJpegCompressor.app" \
     --app-drop-link 480 140 \
     --no-internet-enable \
     "$DMG_PATH" \
@@ -120,9 +120,9 @@ if [[ "$DMG_BACKEND" == "create-dmg" ]]; then
 else
   dmgbuild \
     -s "$SCRIPT_DIR/dmgbuild_settings.py" \
-    -D "app=$STAGING_DIR/ImageDrop.app" \
+    -D "app=$STAGING_DIR/HeicToJpegCompressor.app" \
     -D "background=$BACKGROUND_PATH" \
-    "ImageDrop Installer" \
+    "HEICをJPEGへ縮小圧縮するだけ" \
     "$DMG_PATH"
 fi
 
@@ -131,7 +131,7 @@ if [[ ! -f "$DMG_PATH" ]]; then
   exit 1
 fi
 
-VERIFY_MOUNT_DIR="$(mktemp -d "${TMPDIR:-/tmp}/imagedrop-dmg-verify.XXXXXX")"
+VERIFY_MOUNT_DIR="$(mktemp -d "${TMPDIR:-/tmp}/heictojpegcompressor-dmg-verify.XXXXXX")"
 hdiutil attach -readonly -nobrowse -mountpoint "$VERIFY_MOUNT_DIR" "$DMG_PATH" >/dev/null
 VERIFY_MOUNTED=1
 
