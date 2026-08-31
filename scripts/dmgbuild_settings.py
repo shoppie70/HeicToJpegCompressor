@@ -4,10 +4,10 @@ background = defines["background"]
 format = "UDZO"
 filesystem = "HFS+"
 
-files = [(application, "ImageDrop.app")]
+files = [(application, "HeicToJpegCompressor.app")]
 symlinks = {"Applications": "/Applications"}
 hide = [".background.png"]
-hide_extensions = ["ImageDrop.app"]
+hide_extensions = ["HeicToJpegCompressor.app"]
 
 background = background
 # Tahoe Finder can preserve a roughly 180 pt sidebar even when ShowSidebar is
@@ -26,6 +26,6 @@ text_size = 16
 label_pos = "bottom"
 arrange_by = None
 icon_locations = {
-    "ImageDrop.app": (180, 140),
+    "HeicToJpegCompressor.app": (180, 140),
     "Applications": (480, 140),
 }

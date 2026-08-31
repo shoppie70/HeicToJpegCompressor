@@ -1,214 +1,63 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="iPhoneの写真をMacに持ってきたあと、JPEGにして、ちょうどいいサイズにして、軽くする。その毎回の作業を、画像を放り込むだけにするmacOSアプリ。">
-    <meta name="theme-color" content="#f4f1e8">
-    <meta property="og:title" content="HEICをJPEGへ縮小圧縮するだけ.app">
-    <meta property="og:description" content="変換サイトも、Squooshも、もう開かない。画像を放り込むだけのmacOSアプリ。">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://raw.githubusercontent.com/shoppie70/ImageDrop/main/assets/ImageDrop.png">
-    <title>HEICをJPEGへ縮小圧縮するだけ.app - macOS画像変換ユーティリティ</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="assets/ImageDrop.png">
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="トップへ">
-        <img class="brand-icon" src="assets/ImageDrop.png" alt="" width="28" height="28">
-        <span>HEIC → JPEG</span>
-      </a>
-      <nav class="header-nav" aria-label="ページ内ナビゲーション">
-        <a href="#why">なんで作った？</a>
-        <a href="#features">仕様・できること</a>
-        <a class="nav-download" href="https://github.com/shoppie70/ImageDrop/releases/download/v1.0.0/ImageDrop-v1.0.0.dmg">ダウンロード <span aria-hidden="true">↓</span></a>
-        <a class="github-link" href="https://github.com/shoppie70/ImageDrop">GitHub <span aria-hidden="true">↗</span></a>
-      </nav>
-    </header>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HEICをJPEGへ変換し、ちょうどよい大きさに縮小・圧縮。画像をドロップするだけの、ローカル完結macOSアプリ。">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="HEICをJPEGへ縮小圧縮するだけ">
+  <meta property="og:description" content="変換サイトも画像編集ソフトも開かない。画像をドロップするだけのmacOSネイティブアプリ。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://raw.githubusercontent.com/shoppie70/HeicToJpegCompressor/main/docs/assets/HeicToJpegCompressor.png">
+  <title>HEICをJPEGへ縮小圧縮するだけ — macOS画像変換アプリ</title>
+  <link rel="icon" type="image/png" href="assets/HeicToJpegCompressor.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="#top" aria-label="ページ先頭へ"><img src="assets/HeicToJpegCompressor.png" width="28" height="28" alt=""><span>HEIC → JPEG</span></a>
+    <nav aria-label="メインナビゲーション"><a href="#features">できること</a><a href="#specs">仕様</a><a class="github" href="https://github.com/shoppie70/HeicToJpegCompressor">GitHub</a><a class="nav-download" href="https://github.com/shoppie70/HeicToJpegCompressor/releases/download/v1.1.0/HeicToJpegCompressor-v1.1.0.dmg">ダウンロード</a></nav>
+  </div></header>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title"><div class="hero-inner">
+      <p class="pill"><i></i>macOS Native Utility</p>
+      <h1 id="hero-title">HEICをJPEGへ。<br><span>縮小して、圧縮するだけ。</span></h1>
+      <p class="hero-lede">iPhoneから持ってきた写真を、Macの上で使いやすいJPEGに。<br class="desktop">変換サイトも画像編集ソフトも、もう開きません。</p>
+      <div class="actions">
+        <a class="button primary" href="https://github.com/shoppie70/HeicToJpegCompressor/releases/download/v1.1.0/HeicToJpegCompressor-v1.1.0.dmg"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 17v3h16v-3"/></svg>無料ダウンロード <small>v1.1.0</small></a>
+        <a class="button secondary" href="https://github.com/shoppie70/HeicToJpegCompressor">GitHubでコードを見る<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 16 16 8m-6 0h6v6"/></svg></a>
+      </div>
+      <p class="system-note">macOS 14 Sonoma以降 · Apple Silicon / Intel Mac対応 · 画像はMacの外へ送信しません</p>
+      <div class="app-stage" aria-label="アプリ画面のイメージ"><i class="glow"></i><div class="app-window">
+        <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="drop-preview"><img src="assets/HeicToJpegCompressor.png" width="132" height="132" alt="HEICをJPEGへ縮小圧縮するだけのアプリアイコン"><div class="drop-zone"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 16V5m0 0L8 9m4-4 4 4M5 15v4h14v-4"/></svg><strong>ここに画像をドロップ</strong><small>HEIC / HEIF / JPEG / PNG · 複数枚対応</small></div></div>
+        <p class="settings"><span>JPEG</span><span>最大 1980 px</span><span>品質 0.85</span><span>メタデータ削除</span></p>
+      </div></div>
+    </div></section>
 
-    <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-content">
-          <div class="hero-text">
-            <p class="eyebrow">A VERY SMALL macOS APP</p>
-            <h1 id="hero-title"><span>HEICをJPEGへ</span><br>縮小圧縮するだけ<span class="dot-app">.app</span></h1>
-            <p class="hero-lede">変換サイトも、Squooshも、<br class="mobile-break">もう開かない。</p>
-            <p class="hero-copy">iPhoneの写真をMacに持ってきたあと、<strong>「JPEGにして、ちょうどいいサイズにして、軽くする」</strong>という毎回の作業を、画像を放り込むだけにするmacOSアプリです。</p>
-            
-            <div class="hero-actions">
-              <a class="button button-download" href="https://github.com/shoppie70/ImageDrop/releases/download/v1.0.0/ImageDrop-v1.0.0.dmg">
-                <span class="btn-icon" aria-hidden="true">↓</span>
-                <span>ダウンロード (v1.0.0)</span>
-              </a>
-              <a class="button button-secondary" href="https://github.com/shoppie70/ImageDrop">GitHubで見る <span aria-hidden="true">→</span></a>
-            </div>
-            <p class="hero-note">macOS 14 Sonoma以降・Apple Silicon（M1以降）対応 · 無料 · 画像はMacの外へ送信しません</p>
-          </div>
-          <div class="hero-visual">
-            <div class="icon-stage">
-              <img class="hero-app-icon" src="assets/ImageDrop.png" alt="HEICをJPEGへ縮小圧縮するだけ.app アイコン" width="220" height="220">
-              <div class="icon-reflection" aria-hidden="true"></div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <section class="workflow white" aria-labelledby="workflow-title"><div class="section-inner">
+      <header class="section-heading"><p>WORKFLOW COMPARISON</p><h2 id="workflow-title">いつもの作業を、<br>ひとつのドロップへ。</h2></header>
+      <div class="workflow-grid">
+        <article class="workflow-card old"><h3><b>×</b>これまで</h3><ol><li><span>1</span>変換サイトを開く</li><li><span>2</span>HEICをアップロードする</li><li><span>3</span>JPEGをダウンロードする</li><li><span>4</span>縮小・圧縮ツールを開く</li><li><span>5</span>もう一度保存する</li></ol><p>写真を外部サービスへ送る必要もありました。</p></article>
+        <article class="workflow-card new"><h3><b>✓</b>HEICをJPEGへ縮小圧縮するだけ</h3><div class="simple-flow"><div><span>1</span><p><strong>アプリへドロップ</strong><small>ウィンドウにも、Dockアイコンにも。</small></p></div><div><span>2</span><p><strong>同じフォルダに保存</strong><small>元画像を残したまま、JPEGができます。</small></p></div></div><p>完全ローカル処理 · 複数枚まとめて変換</p></article>
+      </div>
+    </div></section>
 
-      <section class="pain-panel" id="why" aria-labelledby="pain-title">
-        <div class="pain-heading">
-          <p class="eyebrow">BEFORE</p>
-          <h2 id="pain-title">今まで、<br>何をしていたんだろう。</h2>
-        </div>
-        <div class="old-flow" aria-label="以前の画像変換フロー">
-          <div class="old-flow-item"><span>01</span><strong>iPhoneで撮る</strong></div>
-          <div class="old-flow-arrow">↓</div>
-          <div class="old-flow-item"><span>02</span><strong>Macへ持ってくる</strong></div>
-          <div class="old-flow-arrow">↓</div>
-          <div class="old-flow-item wasted"><span>03</span><strong>変換サイトを開く</strong></div>
-          <div class="old-flow-arrow wasted">↓</div>
-          <div class="old-flow-item wasted"><span>04</span><strong>HEIC → JPEG</strong></div>
-          <div class="old-flow-arrow wasted">↓</div>
-          <div class="old-flow-item wasted"><span>05</span><strong>Squooshを開く</strong></div>
-          <div class="old-flow-arrow wasted">↓</div>
-          <div class="old-flow-item wasted"><span>06</span><strong>縮小・圧縮</strong></div>
-          <div class="old-flow-arrow">↓</div>
-          <div class="old-flow-item"><span>07</span><strong>やっと使える</strong></div>
-        </div>
-        <p class="pain-note">一回なら大したことはない。<br><strong>だから何年も、同じ作業を繰り返していました。</strong></p>
-      </section>
+    <section class="features" id="features" aria-labelledby="features-title"><div class="section-inner">
+      <header class="section-heading"><p>FOUR ESSENTIALS</p><h2 id="features-title">必要なことだけを、<br>きちんと。</h2></header>
+      <div class="bento">
+        <article class="card wide"><div><em>FORMAT</em><h3>扱いやすいJPEGへ</h3><p>HEIC / HEIFはもちろん、JPEG、JPG、PNGもまとめてJPEGへ変換します。</p></div><div class="format" aria-label="各形式からJPEGへ変換"><div><span>.HEIC</span><span>.HEIF</span><span>.PNG</span><span>.JPG</span></div><i></i><strong>.JPEG</strong></div></article>
+        <article class="card"><div><em>PRIVACY</em><h3>撮影情報を持ち出さない</h3><p>初期設定では、EXIFやGPSなどのプライベートなメタデータを出力へコピーしません。</p></div><div class="status"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 2.8 8.3 7 10 4.2-1.7 7-5.5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-5"/></svg>初期設定 ON</div></article>
+        <article class="card"><div><em>RESIZE</em><h3>大きすぎない写真へ</h3><p>長辺を最大1980pxに。小さな画像は拡大せず、比率を保ちます。</p></div><div class="dimensions"><div>4032 × 3024</div><div>1980 × 1485</div></div></article>
+        <article class="card wide"><div><em>COMPRESSION</em><h3>軽さと見た目のバランス</h3><p>JPEG品質の初期値は0.85。用途に合わせて、設定画面から品質と最大長辺を変更できます。</p></div><div class="quality"><div><i></i></div><strong>0.85</strong><span>JPEG QUALITY</span></div></article>
+      </div>
+    </div></section>
 
-      <section class="realization" aria-label="開発のきっかけ">
-        <p>そして、ある日。</p>
-        <blockquote>「なんで毎回、<br>同じことを手でやってるんだ？」</blockquote>
-      </section>
-
-      <section class="after-section" id="after" aria-labelledby="after-title">
-        <div class="section-heading">
-          <p class="eyebrow">AFTER</p>
-          <h2 id="after-title">いまは、これだけ。</h2>
-        </div>
-
-        <div class="converter-demo">
-          <div class="file-card source-file">
-            <span class="file-type">HEIC</span>
-            <strong>IMG_1234.HEIC</strong>
-            <small>iPhoneから来た、そのままの写真</small>
-          </div>
-          <div class="drop-machine">
-            <span class="drop-icon" aria-hidden="true">↓</span>
-            <strong>ここへ放り込む</strong>
-            <small>複数枚でもOK</small>
-          </div>
-          <div class="file-card result-file">
-            <span class="file-type">JPEG</span>
-            <strong>IMG_1234_compressed.jpg</strong>
-            <small>そのまま使いやすい画像</small>
-          </div>
-        </div>
-
-        <div class="preset-row" aria-label="初期設定">
-          <span>JPEG</span>
-          <span>最大長辺 1980px</span>
-          <span>品質 85%</span>
-          <span>metadata削除</span>
-          <span>複数枚一括対応</span>
-        </div>
-      </section>
-
-      <section class="section jobs-section" id="features" aria-labelledby="jobs-title">
-        <div class="section-heading">
-          <p class="eyebrow">ONE JOB. DONE WELL.</p>
-          <h2 id="jobs-title">すること。</h2>
-        </div>
-        <div class="job-grid">
-          <article>
-            <span class="job-number">01</span>
-            <h3>JPEGにする</h3>
-            <p>HEIC / HEIF / JPEG / PNGを、扱いやすいJPEGへ。</p>
-          </article>
-          <article>
-            <span class="job-number">02</span>
-            <h3>ちょうどよく縮める</h3>
-            <p>初期値は最大長辺1980px。小さい画像は無理に拡大しません。</p>
-          </article>
-          <article>
-            <span class="job-number">03</span>
-            <h3>軽くする</h3>
-            <p>初期品質は0.85。見た目と容量のバランスを取ります。</p>
-          </article>
-          <article>
-            <span class="job-number">04</span>
-            <h3>余計な情報を残さない</h3>
-            <p>GPS、撮影日時、カメラ情報などのmetadataを初期設定で削除します。</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="not-section" aria-labelledby="not-title">
-        <div>
-          <p class="eyebrow">NOT AN IMAGE EDITOR</p>
-          <h2 id="not-title">しないこと。</h2>
-        </div>
-        <ul>
-          <li>トリミングしない。</li>
-          <li>フィルターをかけない。</li>
-          <li>AI補正しない。</li>
-          <li>クラウドへ送らない。</li>
-          <li>アカウントを作らせない。</li>
-          <li>毎回、設定を聞かない。</li>
-        </ul>
-        <p class="not-conclusion">高機能にするより、<strong>毎回の30秒を消したい。</strong></p>
-      </section>
-
-      <section class="story-section" aria-labelledby="story-title">
-        <div class="story-copy">
-          <p class="eyebrow">WHY I BUILT IT</p>
-          <h2 id="story-title">自分が本当に使うものを、<br>初めてのSwiftで。</h2>
-          <p>Swiftも、macOSネイティブアプリ開発も未経験でした。</p>
-          <p>でも「自分が毎回やっていて、本当に面倒な作業」が見つかった。なら、その自動化をMacアプリ開発の題材にすればいい。</p>
-          <p>高機能な画像変換ソフトを作ることが目的ではありません。<strong>日常に残っていた小さな無駄を、一つ消すためのアプリです。</strong></p>
-        </div>
-        <div class="story-stamp" aria-hidden="true">
-          <span>SWIFT</span>
-          <strong>×</strong>
-          <span>REAL<br>PROBLEM</span>
-        </div>
-      </section>
-
-      <section class="spec-strip" aria-label="主な仕様">
-        <div><span>INPUT</span><strong>HEIC / HEIF<br>JPEG / PNG</strong></div>
-        <div><span>OUTPUT</span><strong>JPEG</strong></div>
-        <div><span>PROCESS</span><strong>100% LOCAL<br>(Apple Frameworks)</strong></div>
-        <div><span>PRICE</span><strong>FREE / MIT<br>(Open Source)</strong></div>
-      </section>
-
-      <section class="final-cta" aria-labelledby="cta-title">
-        <div class="cta-icon-wrapper">
-          <img class="cta-app-icon" src="assets/ImageDrop.png" alt="アプリアイコン" width="120" height="120">
-        </div>
-        <p class="eyebrow">THAT'S IT.</p>
-        <h2 id="cta-title">JPEGにして、<br>ちょうどいいサイズにして、<br>軽くする。</h2>
-        <p>それ以上でも、それ以下でもないmacOSアプリです。</p>
-        
-        <div class="cta-actions">
-          <a class="button button-download" href="https://github.com/shoppie70/ImageDrop/releases/download/v1.0.0/ImageDrop-v1.0.0.dmg">
-            <span class="btn-icon" aria-hidden="true">↓</span>
-            <span>ImageDrop v1.0.0 をダウンロード (DMG)</span>
-          </a>
-          <a class="button button-secondary" href="https://github.com/shoppie70/ImageDrop">GitHubでソースを見る <span aria-hidden="true">→</span></a>
-        </div>
-
-        <div class="launch-tip">
-          <strong>💡 初回起動時に警告が表示された場合</strong>
-          <p>macOSの［システム設定］＞［プライバシーとセキュリティ］＞［このまま開く］をクリックしてください。</p>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <span>HEICをJPEGへ縮小圧縮するだけ.app</span>
-      <span>Repository: <a href="https://github.com/shoppie70/ImageDrop">ImageDrop</a></span>
-      <a href="https://github.com/shoppie70/ImageDrop/blob/main/LICENSE">MIT License</a>
-    </footer>
-  </body>
+    <section class="specs white" id="specs" aria-label="動作仕様"><div class="spec-inner"><div><span>INPUT</span><strong>HEIC · HEIF · JPEG · PNG</strong></div><div><span>OUTPUT</span><strong>JPEG (.jpg)</strong></div><div><span>PROCESSING</span><strong>100% ON-DEVICE</strong></div><div><span>SYSTEM</span><strong>macOS 14+ · Universal</strong></div></div></section>
+    <section class="final-cta" aria-labelledby="cta-title"><div><img src="assets/HeicToJpegCompressor.png" width="108" height="108" alt=""><h2 id="cta-title">写真を放り込んだら、<br>もう完成。</h2><p>無料のネイティブmacOSアプリ。ソースコードも公開しています。</p><a class="button primary" href="https://github.com/shoppie70/HeicToJpegCompressor/releases/download/v1.1.0/HeicToJpegCompressor-v1.1.0.dmg"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 17v3h16v-3"/></svg>v1.1.0をダウンロード</a><aside><strong>初回起動時に警告が表示されたら</strong><p>このアプリは未公証です。macOSの［システム設定］→［プライバシーとセキュリティ］で［このまま開く］を選んでください。</p></aside></div></section>
+  </main>
+  <footer><div class="footer-inner"><p>HEICをJPEGへ縮小圧縮するだけ</p><div><a href="https://github.com/shoppie70/HeicToJpegCompressor">GitHub Repository</a><a href="https://github.com/shoppie70/HeicToJpegCompressor/blob/main/LICENSE">MIT License</a></div></div></footer>
+</body>
 </html>
