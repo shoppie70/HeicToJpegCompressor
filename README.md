@@ -1,7 +1,7 @@
 # HEICをJPEGへ縮小圧縮するだけ.app
 
 <p align="center">
-  <a href="https://github.com/shoppie70/HeicToJpegCompressor/releases/download/v1.1.0/HeicToJpegCompressor-v1.1.0.dmg">
+  <a href="https://github.com/shoppie70/HeicToJpegCompressor/releases/download/v1.1.1/HeicToJpegCompressor-v1.1.1.dmg">
     <img src="assets/HeicToJpegCompressor.png" width="144" alt="HEICをJPEGへ縮小圧縮するだけ.app のアイコン">
   </a>
 </p>
@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/shoppie70/HeicToJpegCompressor/releases/download/v1.1.0/HeicToJpegCompressor-v1.1.0.dmg"><strong>DMGをダウンロード（v1.1.0）</strong></a><br>
+  <a href="https://github.com/shoppie70/HeicToJpegCompressor/releases/download/v1.1.1/HeicToJpegCompressor-v1.1.1.dmg"><strong>DMGをダウンロード（v1.1.1）</strong></a><br>
   macOS 14 Sonoma以降・Apple Silicon / Intel Mac対応 · 無料 · 画像はMacの外へ送信しません
 </p>
 
@@ -41,7 +41,7 @@ HEIC / HEIF / JPEG / JPG / PNGをアプリへドロップすると、元画像�
 
 ## インストール
 
-1. [HeicToJpegCompressor-v1.1.0.dmg をダウンロード](https://github.com/shoppie70/HeicToJpegCompressor/releases/download/v1.1.0/HeicToJpegCompressor-v1.1.0.dmg)して開きます。
+1. [HeicToJpegCompressor-v1.1.1.dmg をダウンロード](https://github.com/shoppie70/HeicToJpegCompressor/releases/download/v1.1.1/HeicToJpegCompressor-v1.1.1.dmg)して開きます。
 2. `HEICをJPEGへ縮小圧縮するだけ.app` を `Applications` フォルダへドラッグします。
 3. `Applications` から `HEICをJPEGへ縮小圧縮するだけ` を起動します。
 

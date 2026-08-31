@@ -72,21 +72,19 @@ final class ConversionViewModel: ObservableObject {
         state = .converting(completed: 0, total: urls.count)
         results = []
 
-        Task.detached(priority: .userInitiated) { [weak self] in
-            let service = ImageConversionService()
+        Task { [weak self] in
             var batch: [ConversionResult] = []
             for url in urls {
-                batch.append(service.convert(url: url, settings: settings))
-                await MainActor.run {
-                    self?.results = batch
-                    self?.state = .converting(completed: batch.count, total: urls.count)
-                }
+                let result = await Task.detached(priority: .userInitiated) {
+                    ImageConversionService().convert(url: url, settings: settings)
+                }.value
+                batch.append(result)
+                self?.results = batch
+                self?.state = .converting(completed: batch.count, total: urls.count)
             }
             let summary = Self.summary(for: batch)
-            await MainActor.run {
-                self?.state = .finished(summary: summary)
-                NotificationService.post(summary: summary)
-            }
+            self?.state = .finished(summary: summary)
+            NotificationService.post(summary: summary)
         }
     }
 
