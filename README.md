@@ -45,8 +45,16 @@ HEIC / HEIF / JPEG / JPG / PNGをアプリへドロップすると、元画像�
 2. `HEICをJPEGへ縮小圧縮するだけ.app` を `Applications` フォルダへドラッグします。
 3. `Applications` から `HEICをJPEGへ縮小圧縮するだけ` を起動します。
 
-> [!NOTE]
-> 初回起動時に「開発元を確認できないため開けません」と表示された場合は、［システム設定］>［プライバシーとセキュリティ］>［このまま開く］を選択してください。これは未公証の個人開発アプリに対するmacOSの通常の保護です。
+### 初回起動時の許可手順
+
+このアプリはApple Developer IDによる署名・Apple公証を行っていないため、macOSが初回起動をブロックします。GitHub Releasesなど信頼できる配布元から取得したDMGであることを確認した場合のみ、次の手順で許可してください。
+
+| 1. 警告を閉じる | 2. 設定で許可する | 3. 起動を再確認する |
+| --- | --- | --- |
+| 「開いていません」と表示されたら、［完了］を選びます。 | ［システム設定］>［プライバシーとセキュリティ］を開き、［このまま開く］を選びます。 | 再確認ダイアログで［このまま開く］を選びます。次回からは通常どおり起動できます。 |
+| <img src="docs/assets/gatekeeper/initial-warning.png" width="300" alt="ImageDrop.appは開いていませんと表示されるmacOSの警告"> | <img src="docs/assets/gatekeeper/privacy-security.png" width="300" alt="macOSのプライバシーとセキュリティに表示されたこのまま開くボタン"> | <img src="docs/assets/gatekeeper/open-confirmation.png" width="300" alt="ImageDrop.appを開くか再確認するダイアログのこのまま開くボタン"> |
+
+※画像内の「ImageDrop.app」は旧名称です。現在のアプリでも操作は同じです。
 
 ## 使い方
 
